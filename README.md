@@ -13,7 +13,11 @@ An example of the setup is shown below.
 ![MBRT-demo](MBRT-demo.gif)
 
 ## Repository information
-The repository has four main folders, which contain PsychoPy experiments (.psyexp) OpenSesame (`.osexp`), together with associated files to be able to run them locally or online. Please consult the `README` files for each version before using them (these four versions are **not** equivalent in terms of configuration). The `README` files contain extensive documentation on the most relevant task settings and detailed information to allow the user further customization.
+This repository has four main folders, which contain PsychoPy (`.psyexp`) and OpenSesame (`.osexp`) experiments, together with associated files to run them **locally** (lab/desktop experiments) or **online** (in a browser). Please consult the accompanying manuscript on the [Movement Imagery Ability Platform](movementimageryability.github.io) for a guide on necessary steps to run a task in each of the four deployment modes, which can help with the decision.
+- [MBRT PsychoPy local]
+- [MBRT PsychoPy online]
+- [MBRT OpenSesame local]
+- [MBRT OpenSesame online]
 
 The versions provided in this repository allow flexibility in terms of key experiment parameters of the MBRT:
 - angles of rotation
