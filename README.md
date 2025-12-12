@@ -13,7 +13,7 @@ An example of the setup is shown below.
 ![MBRT-demo](MBRT-demo.gif)
 
 ## Repository information
-The repository has two main folders, which contain PsychoPy experiments (.psyexp) and associated files to be able to run them locally or online. Please consult the Readme files for each version before using them (local and online versions are NOT equivalent in terms of configuration). The Readme files contain extensive documentation on the most relevant task settings and detailed information to allow the user further customization.
+The repository has four main folders, which contain PsychoPy experiments (.psyexp) OpenSesame (`.osexp`), together with associated files to be able to run them locally or online. Please consult the `README` files for each version before using them (these four versions are **not** equivalent in terms of configuration). The `README` files contain extensive documentation on the most relevant task settings and detailed information to allow the user further customization.
 
 The versions provided in this repository allow flexibility in terms of key experiment parameters of the MBRT:
 - angles of rotation
