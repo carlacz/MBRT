@@ -10,6 +10,7 @@ The most updated versions can be found in this repository.
 Subsequent updates in native software ([PsychoPy](https://www.psychopy.org/index.html) and [OpenSesame](https://osdoc.cogsci.nl/)) may need adjustments. As developers, we are not responsible for implementing these in every use case.
 
 An example of the setup is shown below.
+![MBRT-demo](https://github.com/carlacz/MBRT/edit/main/MBRT-demo.gif)
 
 ## Repository information
 The repository has two main folders, which contain PsychoPy experiments (.psyexp) and associated files to be able to run them locally or online. Please consult the Readme files for each version before using them (local and online versions are NOT equivalent in terms of configuration). The Readme files contain extensive documentation on the most relevant task settings and detailed information to allow the user further customization.
