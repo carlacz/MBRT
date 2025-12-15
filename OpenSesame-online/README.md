@@ -108,7 +108,6 @@ When adding a new language, you must manually insert line breaks using `<br>` wi
 
 #### ⚠️ Critical: Names of folders, files and variables
 You must **MUST NOT** change the names of the folders or files, as this will cause the experiment to crash. Additionally, do not change any variable names; the experiment logic depends on these specific identifiers, and renaming them requires updating the underlying code. Do not move files after decompressing the repository. Any deviation from the original file structure or naming will lead to a crash.
-
 ---------------------------------------
 ## TECHNICAL DETAILS:
 The decompressed repository includes the following files and subfolders:
@@ -142,15 +141,13 @@ The experiment file allows you to customize various settings. In the **Overview*
 
 > **Note:** If you import the provided `.jzip` file directly to the JATOS server without edits, the **Default** settings (bolded above) will be used.
 
----
-
 ### Changing the Defaults
 You can hard-code new default settings within the script. To do this:
 1.  Go to the **Overview** tab.
 2.  Click on the `preparations` inline script.
 3.  Modify lines 12–24 to your desired values.
 
-![Preparations script](Preparations_inline-script.png)
+![Preparations script](preparations_inline-script.png)
 
 > **⚠️ Important:** If you change the default language, you must update **four** related variables to match the ISO codes found in `Language_localiser.csv`. You must update: `selected_language`, `ISO_code`, `selected_ISO`, and `selected_ISO_low`.
 
@@ -179,8 +176,6 @@ You can allow participants to choose specific settings themselves (e.g., their p
 ![experiment settings sequence](experiment-settings_online_sequence.png)
 
 *In this configuration, participants will be prompted to select the specific setting(s) themselves at the start of every run.*
-
----
 
 ### Saving and Exporting
 Once you have finished your configuration, you must export the experiment for online use:
