@@ -1,4 +1,4 @@
-# MENTAL BODY ROTATION TASK (MBRT)
+AL BODY ROTATION TASK (MBRT)
 
 **Author:** Carla Czilczer, 12/12/2025  
 **Software used:** OpenSesame 4.0.2  
