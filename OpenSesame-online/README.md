@@ -100,7 +100,8 @@ Common HTML tags used for this experiment:
 * `<b>Text</b>` : Makes text **bold**.
 * `<br>` : Inserts a line break (new line).
 * `<i>Text</i>` : Makes text *italic*.
-* `<span style='color:red'>Text</span>` : Changes text color.  
+* `<span style='color:red'>Text</span>` : Changes text color.
+
 If you do not use HTML tags, the formatting will not appear in the online experiment.  
 When adding a new language, you must manually insert line breaks using `<br>` within the cell. Otherwise, longer instructions will be truncated. **Do not use the "Enter" key**, as this causes rendering errors and text misalignment during the experiment.  
 
