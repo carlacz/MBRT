@@ -129,7 +129,7 @@ The decompressed repository includes the following files and subfolders:
 ## EXPERIMENT SETTINGS (parameters to choose)
 The experiment file allows you to customize various settings. In the **Overview** tab, under the item `experiment_settings`, you will find the following variables that can be modified:
 
-![experiment settings](.../experiment-settings_online.png)
+![experiment settings](../experiment-settings_online.png)
 
 ### Available Parameters
 
@@ -151,7 +151,7 @@ You can hard-code new default settings within the script. To do this:
 2.  Click on the `preparations` inline script.
 3.  Modify lines 12–24 to your desired values.
 
-![Preparations script](.../preparations_inline-script.png)
+![Preparations script](../preparations_inline-script.png)
 
 > **⚠️ Important:** If you change the default language, you must update **four** related variables to match the ISO codes found in `Language_localiser.csv`. You must update: `selected_language`, `ISO_code`, `selected_ISO`, and `selected_ISO_low`.
 
@@ -177,7 +177,7 @@ You can allow participants to choose specific settings themselves (e.g., their p
 2.  Locate the setting you want the participant to control.
 3.  Change the **"Run if"** statement for that setting from `False` to `True`.
 
-![experiment settings sequence](.../experiment-settings_online_sequence.png)  
+![experiment settings sequence](../experiment-settings_online_sequence.png)  
 In the above example, participants will be asked to select their preferred language at the start of every run.
 
 ### Saving and Exporting
