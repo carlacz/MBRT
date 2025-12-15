@@ -8,24 +8,25 @@
 ---------------------------------------
 ## GENERAL INSTRUCTIONS:
 
-This experiment is built using **OpenSesame**. To run this experiment online, it utilizes the **OSWeb** backend.
+This experiment is built using **[OpenSesame](osdoc.cogsci.nl)**. To run this experiment online, it utilizes the **[OSWeb](https://osdoc.cogsci.nl/4.1/manual/osweb/osweb/)** backend.  
+If you are unfamiliar with OpenSesame, please refer to the [documentation](osdoc.cogsci.nl) on their website. This README specifically details the structure and customization of this MBRT implementation.  
 
-If you are unfamiliar with [OpenSesame](osdoc.cogsci.nl), please refer to the documentation on their website. This README specifically details the structure and customization of this MBRT implementation.  
 ---------------------------------------
 ## SETUP INSTRUCTIONS
 
 To edit or run this this task locally, you need to have **OpenSesame** installed.
-To run the task online, you will likely need a JATOS server or a similar hosting environment compatible with `.osexp`. At the time of writing, [MindProbe](https://mindprobe.eu/) serves as a JATOS server free of charge.
+To run the task online, you will likely need a **[JATOS server]( https://www.jatos.org/)** or a similar hosting environment compatible with `.osexp`. At the time of writing, [MindProbe](https://mindprobe.eu/) serves as a JATOS server free of charge.
 A script for data preparation in [R](https://www.r-project.org/) is provided.
 
 **Step-by-step instructions:**  
 1.  **Download** and unzip the repository to a dedicated folder.
-2.  Log in to your JATOS server (e.g., [JATOS Mindprobe](https://jatos.mindprobe.eu/jatos/signin)), click **Import Study**, and select the `.jzip` file (this is the experiment file).
-3.  **Name and click** on the study to open the dashboard.
+2.  Log in to your JATOS server (e.g., [JATOS sign-in in Mindprobe](https://jatos.mindprobe.eu/jatos/signin)), click **”Import Study”**, and select the `.jzip` file (this is the experiment file).
+3.  Name and click on the study to **open the dashboard**.
 4.  Click on “Study Links”, **choose** your preferred study link type (e.g., Personal Single Link, General Multiple Link, MTurk), click on the “Study Link” button next to it and **copy the URL**.
 5.  **Distribute** the generated link(s) to your participants. They run the task directly in their web browser.
-6.  To **Export Data**, navigate in JATOS to “Results”  “Export Results”. Select “Data only”  “Plain Text” and save the file into the `data` folder located inside the unzipped repository.
+6.  To **export data**, navigate in JATOS to “Results” -> “Export Results”. Select “Data only” -> “Plain Text” and save the file into the `data` folder located inside the unzipped repository.
 7.  **Process the data** using the provided `.R` script.
+
 
 ---------------------------------------
 ## LANGUAGE LOCALIZATION
