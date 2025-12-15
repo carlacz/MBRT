@@ -16,7 +16,7 @@ If you are unfamiliar with OpenSesame, please refer to the [documentation](osdoc
 
 To edit or run this this task locally, you need to have **OpenSesame** installed.  
 To run the task online, you will likely need a [JATOS server]( https://www.jatos.org/). At the time of writing, [MindProbe](https://mindprobe.eu/) serves as a JATOS server free of charge.  
-A script for data preparation in [R](https://www.r-project.org/) is provided.  
+A script for data preparation in [R](https://www.r-project.org/) (4.5.2) is provided.  
 
 **Step-by-step instructions:**  
 1.  **Download** and unzip the repository to a dedicated folder.
@@ -34,8 +34,7 @@ This experiment uses external `.csv` files to manage text and translations. This
 
 **How it works:** Within the experiment, either a default language can be configured (see [changing defaults](#Changing-the-Defaults)), or participants can select their preferred language at the start (see [letting participants select settings](#Letting-Participants-Select-Settings)), otherwise, the default “English” is applied). The experiment uses the corresponding _ISO_code_ (e.g., "EN", "DE") to retrieve the corresponding text from columns in the external `.csv` files (e.g., `Instructions.csv`, `Block_messages.csv`).
 
-**Adding a new language:**
-For more information, see this [Language Localisation Demo]( https://github.com/carlacz/OpenSesame_Language-Localisation-Demo/edit/main/Language_localiser_online/README.md)
+## **Adding a new language:**
 ### 1. Open the relevant `.csv` files
 - `Language_localiser.csv`
 - `Demographics.csv`
@@ -108,6 +107,9 @@ When adding a new language, you must manually insert line breaks using `<br>` wi
 
 #### ⚠️ Critical: Names of folders, files and variables
 You must **MUST NOT** change the names of the folders or files, as this will cause the experiment to crash. Additionally, do not change any variable names; the experiment logic depends on these specific identifiers, and renaming them requires updating the underlying code. Do not move files after decompressing the repository. Any deviation from the original file structure or naming will lead to a crash.
+
+---
+For more information, see this [Language Localisation Demo]( https://github.com/carlacz/OpenSesame_Language-Localisation-Demo/edit/main/Language_localiser_online/README.md)
 
 ---------------------------------------
 ## TECHNICAL DETAILS
@@ -207,7 +209,7 @@ The sequence of a single trial is as follows:
 
 ---------------------------------------
 ## OUTPUT
-Following step 6 in the [setup instructions](#SETUP-INSTRUCTIONS), the data is exported as a single `.txt` file containing all participant responses in long format.  
+Following step 6 in the setp-by-step [setup instructions](#SETUP-INSTRUCTIONS), the data is exported as a single `.txt` file containing all participant responses in long format.  
 The provided `.R` script (`data-preparation.R`) is designed to read this raw JATOS export, extract relevant observations from the test blocks, and save the processed data as `data.rdata`. Please note that this script relies on the standard experiment structure; if modifications were made beyond the configurable Experiment Settings, the code may need adaptation. Additionally, raw data should always be inspected and cleaned of outliers or errors prior to statistical analysis.
 
 **Key Variables for Analysis:**
