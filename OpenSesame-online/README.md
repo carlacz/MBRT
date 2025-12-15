@@ -143,7 +143,7 @@ The experiment file allows you to customize various settings. In the **Overview*
 | `feedback` | • **0.3** (Default)<br>• 0.5<br>• 0.8<br>• 1<br>• No feedback | Duration of feedback (in seconds) per trial in the test blocks. |
 | `language_localiser`| • **English** (Default)<br>• German | Sets the default language for the experiment. |
 
-> **Note:** If you import the provided `.jzip` file directly to the JATOS server without edits, the **Default** settings (bolded above) will be used.
+> **Important:** If you import the provided `.jzip` file directly to the JATOS server without edits, the **Default** settings (bolded above) will be used.
 
 ### Changing the Defaults
 You can hard-code new default settings within the script. To do this:
@@ -196,8 +196,7 @@ Once you have finished your configuration, you must export the experiment for on
 2.  **Demographics:** Participants complete a basic form (Age, Sex, Handedness).
 3.  **Instructions:** Detailed explanation of the task and assignment of response keys.
 4.  **Practice Block:** A short series of trials (0° rotation) with feedback to familiarize participants with the key mapping.
-5.  **Test Blocks:** The main experimental trials.
-    * *Note:* If `n_reps` > 1, the task is automatically divided into 4 blocks with breaks in between.
+5.  **Test Blocks:** The main experimental trials. If `n_reps` > 1, the task is automatically divided into 4 blocks with breaks in between.
 6.  **Completion:** Final "Goodbye" screen.
 
 #### MBRT trial procedure
