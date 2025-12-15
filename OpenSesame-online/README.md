@@ -109,7 +109,7 @@ When adding a new language, you must manually insert line breaks using `<br>` wi
 You must **MUST NOT** change the names of the folders or files, as this will cause the experiment to crash. Additionally, do not change any variable names; the experiment logic depends on these specific identifiers, and renaming them requires updating the underlying code. Do not move files after decompressing the repository. Any deviation from the original file structure or naming will lead to a crash.
 
 <br>
-*For more information on how to implement a language localizer in OpenSesame, see this [Language Localisation Demo]( https://github.com/carlacz/OpenSesame_Language-Localisation-Demo/edit/main/Language_localiser_online/README.md).*
+_For more information on how to implement a language localizer in OpenSesame, see this [Language Localisation Demo]( https://github.com/carlacz/OpenSesame_Language-Localisation-Demo/edit/main/Language_localiser_online/README.md)._
 
 ---------------------------------------
 ## TECHNICAL DETAILS
