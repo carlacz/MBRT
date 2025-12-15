@@ -165,7 +165,7 @@ var selected_feedback = "0.8";
 var selected_n_angles = "6 (0°, 45°, 135°, 180°, 225°, 315°)";
 var selected_body_views = "Front and Back";
 var selected_limbs = "Arms and Legs";
-var selected_n_reps = 1;
+var selected_n_reps = 1;```
 
 ### Letting Participants Select Settings
 You can allow participants to choose specific settings themselves (e.g., their preferred language) at the beginning of the experiment.
