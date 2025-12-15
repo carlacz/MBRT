@@ -1,4 +1,4 @@
-# Mental Body Rotation Task (MBRT)
+# MENTAL BODY ROTATION TASK (MBRT)
 
 **Author:** Carla Czilczer, 12/12/2025  
 **Software used:** OpenSesame 4.0.2  
@@ -6,7 +6,7 @@
 **Languages supported:** English (EN) = default, German (DE), Spanish (ES), French (FR). Further languages can be added, which requires simple changes in the code and updating the `.csv` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
 
 ---------------------------------------
-## GENERAL INSTRUCTIONS:
+## GENERAL INSTRUCTIONS
 
 This experiment is built using [OpenSesame](osdoc.cogsci.nl). To run this experiment online, it utilizes the [OSWeb](https://osdoc.cogsci.nl/4.1/manual/osweb/osweb/) backend.  
 If you are unfamiliar with OpenSesame, please refer to the [documentation](osdoc.cogsci.nl) on their website. This README specifically details the structure and customization of this MBRT implementation.  
@@ -24,7 +24,7 @@ A script for data preparation in [R](https://www.r-project.org/) is provided.
 3.  Name and click on the study to **open the dashboard**.
 4.  Click on “Study Links”, **choose** your preferred study link type (e.g., Personal Single Link, General Multiple Link, MTurk), click on the “Study Link” button next to it and **copy the URL**.
 5.  **Distribute** the generated link(s) to your participants. They run the task directly in their web browser.
-6.  To **export data**, navigate in JATOS to “Results” ➝ “Export Results”. Select “Data only” ➝ “Plain Text” and save the file into the `data` folder located inside the unzipped repository.
+6.  To **export data**, navigate in JATOS to “Results” ➝ “Export Results”. Select “Data only” ➝ “Plain Text” and save the `.txt` file into the `data` folder located inside the unzipped repository.
 7.  **Process the data** using the provided `.R` script.
 
 ---------------------------------------
@@ -110,7 +110,7 @@ When adding a new language, you must manually insert line breaks using `<br>` wi
 You must **MUST NOT** change the names of the folders or files, as this will cause the experiment to crash. Additionally, do not change any variable names; the experiment logic depends on these specific identifiers, and renaming them requires updating the underlying code. Do not move files after decompressing the repository. Any deviation from the original file structure or naming will lead to a crash.
 
 ---------------------------------------
-## TECHNICAL DETAILS:
+## TECHNICAL DETAILS
 The decompressed repository includes the following files and subfolders:
 * `MBRT_OpenSesame_online.osexp`: The main experiment file.
 * `Language_localiser.csv`: Configuration files for language selection (language + ISO code).
@@ -122,6 +122,7 @@ The decompressed repository includes the following files and subfolders:
     * `Stimuli_[...].csv`: Loop files controlling the trial sequence. These are dynamically called depending on the number of repetitions and angles selected (e.g., `Stimuli_4angles_all.csv`, `Stimuli_6angles_def_all.csv`, etc.).
 * **Folder** `mbrt_images`: `.png` files for all visual stimuli.
 * **Folder** `data`: Empty folder designated for storing the `.txt` file exported from JATOS.
+
 ---------------------------------------
 ## EXPERIMENT SETTINGS (parameters to choose)
 The experiment file allows you to customize various settings. In the **Overview** tab, under the item `experiment_settings`, you will find the following variables that can be modified:
@@ -175,12 +176,46 @@ You can allow participants to choose specific settings themselves (e.g., their p
 3.  Change the **"Run if"** statement for that setting from `False` to `True`.
 
 ![experiment settings sequence](experiment-settings_online_sequence.png)
-
-*In this configuration, participants will be prompted to select the specific setting(s) themselves at the start of every run.*
+In the above example, participants will be asked to select their preferred language at the start of every run.
 
 ### Saving and Exporting
+To try out the experiment after changing settings or adding a new language, click on the blue play button. (This mode is **not** suitable for data collection, only for debugging!)
+
 Once you have finished your configuration, you must export the experiment for online use:
 
 1.  **Save** the experiment in OpenSesame.
 2.  **Export** as `.jzip`: In OpenSesame, open the OSWeb extension (“Tools” in the top bar → “OSWeb and JATOS control panel”), and click on “Export to JATOS archive”.  
 3.  This creates a new `.jzip` file. You can now **upload** this file to your JATOS server.
+
+---------------------------------------
+## PARTICIPANT WORKFLOW:
+
+1.  **Settings Selection:** (Conditional) If specific `Run if` statements are set to `True`, participants first select their preferred settings (e.g., Language).
+2.  **Demographics:** Participants complete a basic form (Age, Sex, Handedness).
+3.  **Instructions:** Detailed explanation of the task and assignment of response keys.
+4.  **Practice Block:** A short series of trials (0° rotation) with feedback to familiarize participants with the key mapping.
+5.  **Test Blocks:** The main experimental trials.
+    * *Note:* If `n_reps` > 1, the task is automatically divided into 4 blocks with breaks in between.
+6.  **Completion:** Final "Goodbye" screen.
+
+#### MBRT trial procedure
+The sequence of a single trial is as follows:
+1.  **Fixation dot:** Presented for 1000 ms.
+2.  **Stimulus presentation:** Stays on screen until a keypress is recorded.
+3.  **Feedback:** (Conditional) If enabled, feedback is shown for the selected duration.
+    * *→ Automatic advance to the next trial.*
+
+---------------------------------------
+## OUTPUT
+Following step 6 in the [setup instructions](#step-by-step-instructions), the data is exported as a single `.txt` file containing all participant responses in long format.  
+The provided `.R` script (`data-preparation.R`) is designed to read this raw JATOS export, extract relevant observations from the test blocks, and save the processed data as `data.rdata`. Please note that this script relies on the standard experiment structure; if modifications were made beyond the configurable Experiment Settings, the code may need adaptation. Additionally, raw data should always be inspected and cleaned of outliers or errors prior to statistical analysis.
+
+**Key Variables for Analysis:**
+* `response_time` (or `time_response_keyboard`): Reaction time in milliseconds.
+* `correct`: Accuracy (1 = correct, 0 = incorrect).
+* `mbrt_angle`: The angle of rotation.
+* `mbrt_side`: The laterality of the stimulus (Left/Right).
+* `mbrt_view`: The perspective (Front/Back).
+* `count_block`: The current block number.
+…
+
