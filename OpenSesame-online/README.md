@@ -32,7 +32,7 @@ A script for data preparation in [R](https://www.r-project.org/) is provided.
 
 This experiment uses external `.csv` files to manage text and translations. This makes adding new languages relatively easy, but strict formatting rules apply.
 
-**How it works:** Within the experiment, either a default language can be configured, or participants can select their preferred language at the start (for both, please see [experiment settings](#EXPERIMENT-SETTINGS) below, otherwise, the default “English” is applied). The experiment uses the corresponding _ISO_code_ (e.g., "EN", "DE") to retrieve the corresponding text from columns in the external `.csv` files (e.g., `Instructions.csv`, `Block_messages.csv`).
+**How it works:** Within the experiment, either a default language can be configured (see [changing defaults](#Changing-the-Defaults)), or participants can select their preferred language at the start (see [letting participants select settings](#Letting-Participants-Select-Settings)), otherwise, the default “English” is applied). The experiment uses the corresponding _ISO_code_ (e.g., "EN", "DE") to retrieve the corresponding text from columns in the external `.csv` files (e.g., `Instructions.csv`, `Block_messages.csv`).
 
 **Adding a new language:**
 For more information, see this [Language Localisation Demo]( https://github.com/carlacz/OpenSesame_Language-Localisation-Demo/edit/main/Language_localiser_online/README.md)
@@ -106,19 +106,83 @@ Common HTML tags used for this experiment:
 If you do not use HTML tags, the formatting will not appear in the online experiment.  
 When adding a new language, you must manually insert line breaks using `<br>` within the cell. Otherwise, longer instructions will be truncated. **Do not use the "Enter" key**, as this causes rendering errors and text misalignment during the experiment.  
 
-#### ⚠️ Critical: Names of folders, files and variables  
+#### ⚠️ Critical: Names of folders, files and variables
 You must **MUST NOT** change the names of the folders or files, as this will cause the experiment to crash. Additionally, do not change any variable names; the experiment logic depends on these specific identifiers, and renaming them requires updating the underlying code. Do not move files after decompressing the repository. Any deviation from the original file structure or naming will lead to a crash.
-
 ---------------------------------------
 ## TECHNICAL DETAILS:
-The decompressed repository includes the following files and subfolders:  
+The decompressed repository includes the following files and subfolders:
 * `MBRT_OpenSesame_online.osexp`: The main experiment file.
-* `Language_localiser.csv`: Contains the questions and translations for the demographics form.
-* `Demographics.csv`: Contains the questions and translations for the demographics form.
-* `Messages.csv`: Contains messages that are not specific to the task instruction (e.g., welcome, advance, wrong key used, goodbye).
-* Folder `mbrt_files`: 
-    * `Instructions.csv`: Contains the main task instructions.
-    * `Block_messages.csv`: Contains the text shown between experimental blocks (breaks).
-    * Loop files controlling the trial sequence (dynamically used in the experiment depending on the number of repetitions, and rotations selected): `Stimuli_4angles_all.csv`, `Stimuli_6angles_all.csv`, `Stimuli_6angles_def_all.csv`, `Stimuli_8angles_all.csv`, `Stimuli_12angles_all.csv`
-* Folder `mbrt_images`: `.png` files for visual stimuli presented in the experiment. 
-* Folder `data`: Empty folder in which the `.txt` file exported from JATOS should be stored. 
+* `Language_localiser.csv`: Configuration files for language selection (language + ISO code).
+* `Demographics.csv`: Questions and translations for the demographics form.
+* `Messages.csv`: General messages not specific to task instructions (e.g., welcome, advance, wrong key, goodbye).
+* **Folder** `mbrt_files`:
+    * `Instructions.csv`: Main task instructions.
+    * `Block_messages.csv`: Text displayed between experimental blocks (break screens).
+    * `Stimuli_[...].csv`: Loop files controlling the trial sequence. These are dynamically called depending on the number of repetitions and angles selected (e.g., `Stimuli_4angles_all.csv`, `Stimuli_6angles_def_all.csv`, etc.).
+* **Folder** `mbrt_images`: `.png` files for all visual stimuli.
+* **Folder** `data`: Empty folder designated for storing the `.txt` file exported from JATOS.
+---------------------------------------
+## EXPERIMENT SETTINGS (parameters to choose)
+The experiment file allows you to customize various settings. In the **Overview** tab, under the item `experiment_settings`, you will find the following variables that can be modified:
+
+![experiment settings](experiment-settings.png)
+
+### Available Parameters
+
+| Variable | Options | Description |
+| :--- | :--- | :--- |
+| `response_mode` | • **both hands** (Default)<br>• left hand<br>• right hand | Determines the required input method. |
+| `n_angles` | • **6** (0°, 45°, 135°, 180°, 225°, 315°) (Default)<br>• 4 (increments of 90°)<br>• 6 (increments of 60°)<br>• 8 (increments of 45°)<br>• 12 (increments of 30°) | Sets the number and type of rotation angles presented. |
+| `body_views` | • **front and back** (Default)<br>• front<br>• back | Determines which body orientations are shown. |
+| `limbs` | • **arms and legs** (Default)<br>• arms<br>• legs | Determines which limbs are rotated. |
+| `n_reps` | • **1** (Default)<br>• 4<br>• 8<br>• 12 | The number of times each unique stimulus is repeated. |
+| `feedback` | • **0.3** (Default)<br>• 0.5<br>• 0.8<br>• 1<br>• No feedback | Duration of feedback (in seconds) per trial in the test blocks. |
+| `language_localiser`| • **English** (Default)<br>• German | Sets the default language for the experiment. |
+
+> **Note:** If you import the provided `.jzip` file directly to the JATOS server without edits, the **Default** settings (bolded above) will be used.
+
+---
+
+### Changing the Defaults
+You can hard-code new default settings within the script. To do this:
+1.  Go to the **Overview** tab.
+2.  Click on the `preparations` inline script.
+3.  Modify lines 12–24 to your desired values.
+
+![Preparations script](Preparations_inline-script.png)
+
+> **⚠️ Important:** If you change the default language, you must update **four** related variables to match the ISO codes found in `Language_localiser.csv`. You must update: `selected_language`, `ISO_code`, `selected_ISO`, and `selected_ISO_low`.
+
+**Example configuration:**
+```javascript
+var selected_language = "German";
+var ISO_code = "DE";
+var selected_ISO = "de";
+var selected_ISO_low = "de";
+
+var selected_response_mode = "Both hands";
+var selected_feedback = "0.8";
+var selected_n_angles = "6 (0°, 45°, 135°, 180°, 225°, 315°)";
+var selected_body_views = "Front and Back";
+var selected_limbs = "Arms and Legs";
+var selected_n_reps = 1;
+
+### Letting Participants Select Settings
+You can allow participants to choose specific settings themselves (e.g., their preferred language) at the beginning of the experiment.
+
+1.  Click on the `experiment_settings` item in the Overview tab.
+2.  Locate the setting you want the participant to control.
+3.  Change the **"Run if"** statement for that setting from `False` to `True`.
+
+![experiment settings sequence](experiment-settings_online_sequence.png)
+
+*In this configuration, participants will be prompted to select the specific setting(s) themselves at the start of every run.*
+
+---
+
+### Saving and Exporting
+Once you have finished your configuration, you must export the experiment for online use:
+
+1.  **Save** the experiment in OpenSesame.
+2.  **Export** as `.jzip`: In OpenSesame, open the OSWeb extension (“Tools” in the top bar → “OSWeb and JATOS control panel”), and click on “Export to JATOS archive”.  
+3.  This creates a new `.jzip` file. You can now **upload** this file to your JATOS server.
