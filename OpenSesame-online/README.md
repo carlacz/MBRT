@@ -77,7 +77,7 @@ adv_msg;Press SPACE to continue;Presiona ESPACIO para continuar;Drücken Sie die
 bye_msg;You have finished the experiment;Has terminado el experimento;Sie haben das Experiment beendet;Vous avez terminé l'expérience;Avete terminato l'esperimento
 ```
 
-⚠️Do this for each of the listed `.csv` files ⚠️
+⚠️Do this for each of the listed `.csv` files!
 
 
 ### 4. Update the experiment
@@ -95,15 +95,15 @@ bye_msg;You have finished the experiment;Has terminado el experimento;Sie haben 
 ### 6. Export experiment as `.jzip`
 In OpenSesame, open the OSWeb extension (“Tools” in the top bar → “OSWeb and JATOS control panel”), and click on “Export to JATOS archive”. This saves a new `.jzip` file that you then upload to your JATOS server.
 
-### ⚠️ CRITICAL: TEXT FORMATTING IN CSV FILES ⚠️
-When editing the `.csv` files to add translations or change text, you **MUST use HTML tags** to format text directly. **DO NOT use Enter for a linebreak**. 
+#### ⚠️ CRITICAL: TEXT FORMATTING IN CSV FILES
+When editing the `.csv` files to add translations or change text, you **MUST use HTML tags** to format text directly. **DO NOT** use Enter for a linebreak.   
 **Common HTML tags used for this experiment:**
 * `<b>Text</b>` : Makes text **bold**.
 * `<br>` : Inserts a line break (new line).
 * `<i>Text</i>` : Makes text *italic*.
-* `<span style='color:red'>Text</span>` : Changes text color.
-**If you do not use HTML tags, the formatting will not appear in the online experiment**  
+* `<span style='color:red'>Text</span>` : Changes text color.  
+If you do not use HTML tags, the formatting will not appear in the online experiment.  
 When adding a new language, you must manually insert line breaks using `<br>` within the cell. Otherwise, longer instructions will be truncated. **Do not use the "Enter" key**, as this causes rendering errors and text misalignment during the experiment.
 
-### ⚠️ CRITICAL: NAMES OF FOLDERS, FILES AND VARIABLES ⚠️
+#### ⚠️ CRITICAL: NAMES OF FOLDERS, FILES AND VARIABLES
 You must **MUST NOT** change the names of the folders or files, as this will cause the experiment to crash. Additionally, do not change any variable names; the experiment logic depends on these specific identifiers, and renaming them requires updating the underlying code. Do not move files after decompressing the repository. Any deviation from the original file structure or naming will lead to a crash.
