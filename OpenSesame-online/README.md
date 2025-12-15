@@ -108,6 +108,7 @@ When adding a new language, you must manually insert line breaks using `<br>` wi
 
 #### ⚠️ Critical: Names of folders, files and variables
 You must **MUST NOT** change the names of the folders or files, as this will cause the experiment to crash. Additionally, do not change any variable names; the experiment logic depends on these specific identifiers, and renaming them requires updating the underlying code. Do not move files after decompressing the repository. Any deviation from the original file structure or naming will lead to a crash.
+
 ---------------------------------------
 ## TECHNICAL DETAILS:
 The decompressed repository includes the following files and subfolders:
@@ -165,7 +166,8 @@ var selected_feedback = "0.8";
 var selected_n_angles = "6 (0°, 45°, 135°, 180°, 225°, 315°)";
 var selected_body_views = "Front and Back";
 var selected_limbs = "Arms and Legs";
-var selected_n_reps = 1;```
+var selected_n_reps = 1;
+```
 
 ### Letting Participants Select Settings
 You can allow participants to choose specific settings themselves (e.g., their preferred language) at the beginning of the experiment.
