@@ -175,7 +175,7 @@ You can allow participants to choose specific settings themselves (e.g., their p
 2.  Locate the setting you want the participant to control.
 3.  Change the **"Run if"** statement for that setting from `False` to `True`.
 
-![experiment settings sequence](experiment-settings_online_sequence.png)
+![experiment settings sequence](experiment-settings_online_sequence.png)  
 In the above example, participants will be asked to select their preferred language at the start of every run.
 
 ### Saving and Exporting
@@ -207,7 +207,7 @@ The sequence of a single trial is as follows:
 
 ---------------------------------------
 ## OUTPUT
-Following step 6 in the [setup instructions](#step-by-step-instructions), the data is exported as a single `.txt` file containing all participant responses in long format.  
+Following step 6 in the [setup instructions](#SETUP-INSTRUCTIONS), the data is exported as a single `.txt` file containing all participant responses in long format.  
 The provided `.R` script (`data-preparation.R`) is designed to read this raw JATOS export, extract relevant observations from the test blocks, and save the processed data as `data.rdata`. Please note that this script relies on the standard experiment structure; if modifications were made beyond the configurable Experiment Settings, the code may need adaptation. Additionally, raw data should always be inspected and cleaned of outliers or errors prior to statistical analysis.
 
 **Key Variables for Analysis:**
