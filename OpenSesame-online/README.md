@@ -60,7 +60,7 @@ German;DE
 French;FR
 Italian;IT
 ```
-### 3. Extend the files `Demographics.csv`, `Messages.csv`,`Instructions.csv`, `Block_messages.csv` by adding a new column
+### 3. Extend the files `Demographics.csv`, `Messages.csv`, `Instructions.csv`, `Block_messages.csv` by adding a new column
 Example: `Messages.csv`
 ```
 message;EN;ES;DE;FR
@@ -81,7 +81,7 @@ bye_msg;You have finished the experiment;Has terminado el experimento;Sie haben 
 
 
 ### 4. Update the experiment
-1. Open the experiment
+1. Open the experiment file `MBRT_OpenSesame_online.osexp`
 2. Go to the **overview tab**
 3. In the `experiment_sequence`, click on `language_localiser`
 4. In the window with listed language names, add your new language name (e.g., `Italian`) in a new row — it must exactly match the entry in your `language_localiser.csv`
@@ -106,5 +106,19 @@ Common HTML tags used for this experiment:
 If you do not use HTML tags, the formatting will not appear in the online experiment.  
 When adding a new language, you must manually insert line breaks using `<br>` within the cell. Otherwise, longer instructions will be truncated. **Do not use the "Enter" key**, as this causes rendering errors and text misalignment during the experiment.  
 
-#### ⚠️ Critical: Names of folders, files and variables
+#### ⚠️ Critical: Names of folders, files and variables  
 You must **MUST NOT** change the names of the folders or files, as this will cause the experiment to crash. Additionally, do not change any variable names; the experiment logic depends on these specific identifiers, and renaming them requires updating the underlying code. Do not move files after decompressing the repository. Any deviation from the original file structure or naming will lead to a crash.
+
+---------------------------------------
+## TECHNICAL DETAILS:
+The decompressed repository includes the following files and subfolders:  
+* `MBRT_OpenSesame_online.osexp`: The main experiment file.
+* `Language_localiser.csv`: Contains the questions and translations for the demographics form.
+* `Demographics.csv`: Contains the questions and translations for the demographics form.
+* `Messages.csv`: Contains messages that are not specific to the task instruction (e.g., welcome, advance, wrong key used, goodbye).
+* Folder `mbrt_files`: 
+    * `Instructions.csv`: Contains the main task instructions.
+    * `Block_messages.csv`: Contains the text shown between experimental blocks (breaks).
+    * Loop files controlling the trial sequence (dynamically used in the experiment depending on the number of repetitions, and rotations selected): `Stimuli_4angles_all.csv`, `Stimuli_6angles_all.csv`, `Stimuli_6angles_def_all.csv`, `Stimuli_8angles_all.csv`, `Stimuli_12angles_all.csv`
+* Folder `mbrt_images`: `.png` files for visual stimuli presented in the experiment. 
+* Folder `data`: Empty folder in which the `.txt` file exported from JATOS should be stored. 
