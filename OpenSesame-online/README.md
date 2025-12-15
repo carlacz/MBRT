@@ -94,8 +94,7 @@ bye_msg;You have finished the experiment;Has terminado el experimento;Sie haben 
 ### 6. Export experiment as `.jzip`
 In OpenSesame, open the OSWeb extension (“Tools” in the top bar → “OSWeb and JATOS control panel”), and click on “Export to JATOS archive”. This saves a new `.jzip` file that you then upload to your JATOS server.  
 
-> **⚠️ Important:** When editing the `.csv` files to add translations or change text, you **MUST use HTML tags** to format text directly. **DO NOT** use Enter for a linebreak.   
-
+> **⚠️ Important:** When editing the `.csv` files to add translations or change text, you **MUST use HTML tags** to format text directly. **DO NOT** use "Enter" for a linebreak.   
 Common HTML tags used for this experiment:
 * `<b>Text</b>` : Makes text **bold**.
 * `<br>` : Inserts a line break (new line).
