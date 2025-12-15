@@ -1,4 +1,4 @@
-# MENTAL BODY ROTATION TASK (MBRT)
+# Mental Body Rotation Task (MBRT)
 
 **Author:** Carla Czilczer, 12/12/2025  
 **Software used:** OpenSesame 4.0.2  
@@ -108,6 +108,7 @@ When adding a new language, you must manually insert line breaks using `<br>` wi
 
 #### ⚠️ Critical: Names of folders, files and variables
 You must **MUST NOT** change the names of the folders or files, as this will cause the experiment to crash. Additionally, do not change any variable names; the experiment logic depends on these specific identifiers, and renaming them requires updating the underlying code. Do not move files after decompressing the repository. Any deviation from the original file structure or naming will lead to a crash.
+
 ---------------------------------------
 ## TECHNICAL DETAILS:
 The decompressed repository includes the following files and subfolders:
@@ -125,7 +126,7 @@ The decompressed repository includes the following files and subfolders:
 ## EXPERIMENT SETTINGS (parameters to choose)
 The experiment file allows you to customize various settings. In the **Overview** tab, under the item `experiment_settings`, you will find the following variables that can be modified:
 
-![experiment settings](experiment-settings.png)
+![experiment settings](experiment-settings_online.png)
 
 ### Available Parameters
 
