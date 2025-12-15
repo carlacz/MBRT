@@ -105,7 +105,7 @@ Common HTML tags used for this experiment:
 If you do not use HTML tags, the formatting will not appear in the online experiment.  
 When adding a new language, you must manually insert line breaks using `<br>` within the cell. Otherwise, longer instructions will be truncated. **Do not use the "Enter" key**, as this causes rendering errors and text misalignment during the experiment.  
 
-#### ⚠️ Critical: Names of folders, files and variables
+> **⚠️ Critical: Names of folders, files and variables**
 You must **MUST NOT** change the names of the folders or files, as this will cause the experiment to crash. Additionally, do not change any variable names; the experiment logic depends on these specific identifiers, and renaming them requires updating the underlying code. Do not move files after decompressing the repository. Any deviation from the original file structure or naming will lead to a crash.
 
 <br>
