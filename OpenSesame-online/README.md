@@ -218,7 +218,7 @@ The sequence of a single trial is as follows:
 ---------------------------------------
 ## OUTPUT
 
-Following step 6 in the [step-by-step instructions](#EXPERIMENT-SETTINGS), the data is exported from JATOS as a single `.txt` file containing all participant responses in **JSON format**.
+Following step 6 in the [step-by-step instructions](#EXPERIMENT-SETTINGS-(parameters-to-choose)), the data is exported from JATOS as a single `.txt` file containing all participant responses in **JSON format**.
 
 The provided `data-prep.R` script is designed to read the `.txt`  file in JSON format, extract relevant observations from the test blocks, and save the processed data as `data.rdata` in the `data` folder.
 
@@ -226,7 +226,7 @@ The provided `data-prep.R` script is designed to read the `.txt`  file in JSON f
 
 The script will generate `data.rdata`, which contains two dataframes: `data_long_tbl` (trial-level data) and `data_wide` (demographics).
 
-> **Note:** This script relies on the standard experiment structure. If modifications were made beyond the configurable [Experiment Settings](# EXPERIMENT-SETTINGS), the code may need adaptation. Additionally, raw data should always be inspected and cleaned of outliers or errors prior to statistical analysis.
+> **Note:** This script relies on the standard experiment structure. If modifications were made beyond the configurable [Experiment Settings](#EXPERIMENT-SETTINGS-(parameters-to-choose)), the code may need adaptation. Additionally, raw data should always be inspected and cleaned of outliers or errors prior to statistical analysis.
 
 ### Variable Documentation
 
