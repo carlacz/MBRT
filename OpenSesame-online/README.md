@@ -257,7 +257,7 @@ The script will generate `data.rdata`, which contains two dataframes: `data_long
 | `subject_nr` | character | Participant ID. |
 | `age` | integer | Participant age in years. |
 | `sex` | character | Participant sex ("f" = female, "m" = male, "d" = diverse). |
-| `handedness` | character | Participant handedness ("l" = left, "r" = right) or NA. |
+| `handedness` | character | Participant handedness ("l" = left, "r" = right). |
 
 -----
 
