@@ -1,14 +1,14 @@
 # MENTAL BODY ROTATION TASK (MBRT)
 
 **Author:** Carla Czilczer, 12/12/2025  
-**Software used:** OpenSesame 4.0.2  
+**Software used:** OpenSesame 4.0.24
 **Experiment Type:** Online  
 **Languages supported:** English (EN) = default, German (DE), Spanish (ES), French (FR). Further languages can be added, which requires simple changes in the code and updating the `.csv` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
 
 ---------------------------------------
 ## GENERAL INSTRUCTIONS
 
-This experiment is built using [OpenSesame](osdoc.cogsci.nl). To run this experiment online, it utilizes the [OSWeb](https://osdoc.cogsci.nl/4.1/manual/osweb/osweb/) backend.  
+This experiment is built using [OpenSesame](osdoc.cogsci.nl) 4.0.24. To run this experiment online, it utilizes the [OSWeb](https://osdoc.cogsci.nl/4.1/manual/osweb/osweb/) backend. Please check the version you are using, as older OpenSesame versions will likely crash. 
 If you are unfamiliar with OpenSesame, please refer to the [documentation](osdoc.cogsci.nl) on their website. This README specifically details the structure and customization of this MBRT implementation.  
 
 ---------------------------------------
@@ -24,7 +24,7 @@ A script for data preparation in [R](https://www.r-project.org/) (4.5.2) is prov
 3.  Name and click on the study to **open the dashboard**.
 4.  Click on “Study Links”, **choose** your preferred study link type (e.g., Personal Single Link, General Multiple Link, MTurk), click on the “Study Link” button next to it and **copy the URL**.
 5.  **Distribute** the generated link(s) to your participants. They run the task directly in their web browser.
-6.  To **export data**, navigate in JATOS to “Results” ➝ “Export Results”. Select “Data only” ➝ “Plain Text” and save the `.txt` file into the `data` folder located inside the unzipped repository.
+6.  To **export data**, navigate in JATOS to “Results” ➝ Select the data you want to keep (e.g., “All”) in the top bar, select “Export Results” ➝ “Data only” ➝ “Plain Text” and save the `.txt` file into the `data` folder located inside the unzipped repository, and **rename** it to `data.txt`. This file involves the data in JSON-format.
 7.  **Process the data** using the provided `.R` script.
 
 ---------------------------------------
@@ -114,7 +114,8 @@ _For more information on how to implement a language localizer in OpenSesame, se
 ---------------------------------------
 ## TECHNICAL DETAILS
 The decompressed repository includes the following files and subfolders:
-* `MBRT_OpenSesame_online.osexp`: The main experiment file.
+* `MBRT_OpenSesame_online.osexp`: The main experiment file; needed to change the experiment settings.
+* `MBRT_OpenSesame_online.jzip`: The experiment file as JATOS archive; ready to be uploaded to the JATOS server.
 * `Language_localiser.csv`: Configuration files for language selection (language + ISO code).
 * `Demographics.csv`: Questions and translations for the demographics form.
 * `Messages.csv`: General messages not specific to task instructions (e.g., welcome, advance, wrong key, goodbye).
@@ -124,6 +125,7 @@ The decompressed repository includes the following files and subfolders:
     * `Stimuli_[...].csv`: Loop files controlling the trial sequence. These are dynamically called depending on the number of repetitions and angles selected (e.g., `Stimuli_4angles_all.csv`, `Stimuli_6angles_def_all.csv`, etc.).
 * **Folder** `mbrt_images`: `.png` files for all visual stimuli.
 * **Folder** `data`: Empty folder designated for storing the `.txt` file exported from JATOS.
+* `data-prep.R`: R script that reads in `data.txt`, generates `data.rdata` file and stores it in the `data` folder. `data.rdata` contains the testblock data in long format and demographic data in wide format.
 
 ---------------------------------------
 ## EXPERIMENT SETTINGS (parameters to choose)
@@ -149,7 +151,7 @@ The experiment file allows you to customize various settings. In the **Overview*
 You can hard-code new default settings within the script. To do this:
 1.  Go to the **Overview** tab.
 2.  Click on the `preparations` inline script.
-3.  Modify lines 12–24 to your desired values.
+3.  Modify lines **12–23** to your desired values. You **MUST NOT** modify any other lines in the script!
 
 ![Preparations script](../preparations_inline-script.png)
 
@@ -175,10 +177,17 @@ You can allow participants to choose specific settings themselves (e.g., their p
 
 1.  Click on the `experiment_settings` item in the Overview tab.
 2.  Locate the setting you want the participant to control.
-3.  Change the **"Run if"** statement for that setting from `False` to `True`.
+3.  Change the "Run if" statement for that setting from “False” to “True”.
 
 ![experiment settings sequence](../experiment-settings_online_sequence.png)  
 In the above example, participants will be asked to select their preferred language at the start of every run.
+### Disable Demographic Questions
+The experiment includes three demographic questions (Age, Sex, Handedness) by default. We incorporate these questions to facilitate the **creation of norms** that will facilitate the interpretation of individual scores.  
+**We welcome contributions to this initiative!** If you wish to submit your data, please follow the steps outlined on the [platform website](link). When uploading data from specific populations (e.g., stroke patients), please ensure you provide the necessary context.
+If you do not wish to contribute, you can disable the demographic questions. 
+1.  Click on the `experiment` item in the Overview tab.
+2.  Locate the `demographics_sequence` in the tab to the right. 
+3.  Change the corresponding “Run if” from “True” to “False”.
 
 ### Saving and Exporting
 To try out the experiment after changing settings or adding a new language, click on the blue play button. (This mode is **not** suitable for data collection, only for debugging!)
@@ -196,27 +205,69 @@ Once you have finished your configuration, you must export the experiment for on
 2.  **Demographics:** Participants complete a basic form (Age, Sex, Handedness).
 3.  **Instructions:** Detailed explanation of the task and assignment of response keys.
 4.  **Practice Block:** A short series of trials (0° rotation) with feedback to familiarize participants with the key mapping.
-5.  **Test Blocks:** The main experimental trials. If `n_reps` > 1, the task is automatically divided into 4 blocks with breaks in between.
+5.  **Test Blocks:** The main experimental trials; for _n_reps_ > 1, divided into 4 blocks with breaks in between.
 6.  **Completion:** Final "Goodbye" screen.
 
 #### MBRT trial procedure
 The sequence of a single trial is as follows:
 1.  **Fixation dot:** Presented for 1000 ms.
 2.  **Stimulus presentation:** Stays on screen until a keypress is recorded.
-3.  **Feedback:** (Conditional) If enabled, feedback is shown for the selected duration.
-    * *→ Automatic advance to the next trial.*
+3.  **Feedback:** (Conditional) If enabled, feedback is shown for the selected duration.  
+    *→ Automatic advance to the next trial.*
 
 ---------------------------------------
 ## OUTPUT
-Following step 6 in the setp-by-step [setup instructions](#SETUP-INSTRUCTIONS), the data is exported as a single `.txt` file containing all participant responses in long format.  
-The provided `.R` script (`data-preparation.R`) is designed to read this raw JATOS export, extract relevant observations from the test blocks, and save the processed data as `data.rdata`. Please note that this script relies on the standard experiment structure; if modifications were made beyond the configurable Experiment Settings, the code may need adaptation. Additionally, raw data should always be inspected and cleaned of outliers or errors prior to statistical analysis.
 
-**Key Variables for Analysis:**
-* `response_time` (or `time_response_keyboard`): Reaction time in milliseconds.
-* `correct`: Accuracy (1 = correct, 0 = incorrect).
-* `mbrt_angle`: The angle of rotation.
-* `mbrt_side`: The laterality of the stimulus (Left/Right).
-* `mbrt_view`: The perspective (Front/Back).
-* `count_block`: The current block number.
-…
+Following step 6 in the [step-by-step instructions](#step-by-step-instructions), the data is exported from JATOS as a single `.txt` file containing all participant responses in **JSON format**.
+
+The provided `data-prep.R` script is designed to read the `.txt`  file in JSON format, extract relevant observations from the test blocks, and save the processed data as `data.rdata` in the `data` folder.
+
+**To run the data preparation**, open `data-prep.R` and **source** the script.
+
+The script will generate `data.rdata`, which contains two dataframes: `data_long_tbl` (trial-level data) and `data_wide` (demographics).
+
+> **Note:** This script relies on the standard experiment structure. If modifications were made beyond the configurable [Experiment Settings](#experiment-settings-parameters), the code may need adaptation. Additionally, raw data should always be inspected and cleaned of outliers or errors prior to statistical analysis.
+
+### Variable Documentation
+
+#### 1. Testblock Trials Data (`data_long_tbl`)
+*Contains one row per trial (filtered to test blocks).*
+
+| Variable Name | Type | Description |
+| :--- | :--- | :--- |
+| `subject_nr` | factor | Participant ID. |
+| `phase` | character | Experiment phase (e.g., "MBRT_testblock"). |
+| `n_testbl` | integer | Test block index (1-4 if >1 repetitions selected). |
+| `n_trial` | integer | Trial index (within the test phase). |
+| `correct` | integer | Correctness flag (1 = correct, 0 = incorrect). |
+| `solution` | character | Correct response code for the trial (e.g., "s", "g", "l", "h"). |
+| `mbrt_angle` | numeric | Stimulus rotation (degrees). |
+| `mbrt_limb` | factor | Limb shown (e.g., "arm", "leg"). |
+| `mbrt_side` | factor | Laterality ("left", "right"). |
+| `mbrt_view` | factor | View ("front", "back"). |
+| `RT` | numeric | Response time in milliseconds (ms). |
+| `trial_response` | character | Key pressed / response code (participant response). |
+
+#### 2. Demographic Data (`data_wide`)
+*Contains one row per subject (if demographics were enabled).*
+
+| Variable Name | Type | Description |
+| :--- | :--- | :--- |
+| `subject_nr` | character | Participant ID. |
+| `age` | integer | Participant age in years. |
+| `sex` | character | Participant sex ("f" = female, "m" = male, "d" = diverse). |
+| `handedness` | character | Participant handedness ("l" = left, "r" = right) or NA. |
+
+-----------------
+
+As developers, we are not responsible for implementing the task in every use case. 
+OpenSesame version updates might require adjustments in the experiment file.  
+Feel free to contribute!
+
+-------
+## REFERENCE
+Please cite [Czilczer et al. (2025)](DOI) when using this resource.
+
+
+
 
