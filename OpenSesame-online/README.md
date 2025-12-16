@@ -257,10 +257,13 @@ The script will generate `data.rdata`, which contains two dataframes: `data_long
 | `age` | integer | Participant age in years. |
 | `sex` | character | Participant sex ("f" = female, "m" = male, "d" = diverse). |
 | `handedness` | character | Participant handedness ("l" = left, "r" = right) or NA. |
------------------
+
+-----
+
 As developers, we are not responsible for implementing the task in every use case. 
 OpenSesame version updates might require adjustments in the experiment file.  
 Feel free to contribute!
+
 -------
 ## REFERENCE
 Please cite [Czilczer et al. (2025)](DOI) when using this resource.
