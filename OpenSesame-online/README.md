@@ -1,14 +1,14 @@
 # MENTAL BODY ROTATION TASK (MBRT)
 
 **Author:** Carla Czilczer, 16/12/2025  
-**Software used:** OpenSesame 4.0.24  
+**Software used:** OpenSesame 4.1.6
 **Experiment Type:** Online  
-**Languages supported:** English (EN) = default, German (DE) (Spanish (ES) and French (FR) comming soon!). Further languages can be added, which requires simple changes in the code and updating the `.csv` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
+**Languages supported:** English (EN) = default, German (DE), Spanish (ES), French (FR). Further languages can be added, which requires simple changes in the code and updating the `.csv` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
 
 ---------------------------------------
 ## GENERAL INSTRUCTIONS
 
-This experiment is built using [OpenSesame]( https://osdoc.cogsci.nl/) 4.0.24. To run this experiment online, it utilizes the [OSWeb](https://osdoc.cogsci.nl/4.1/manual/osweb/osweb/) backend. Please check the version you are using, as older OpenSesame versions will likely crash. 
+This experiment is built using [OpenSesame]( https://osdoc.cogsci.nl/) 4.1.6. To run this experiment online, it utilizes the [OSWeb](https://osdoc.cogsci.nl/4.1/manual/osweb/osweb/) backend. Please check the version you are using, as older OpenSesame versions will likely crash. 
 If you are unfamiliar with OpenSesame, please refer to the [documentation](osdoc.cogsci.nl) on their website. This README specifically details the structure and customization of this MBRT implementation.  
 
 ---------------------------------------
