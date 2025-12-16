@@ -1,21 +1,21 @@
 # MENTAL BODY ROTATION TASK (MBRT)
 
 **Author:** Carla Czilczer, 12/12/2025  
-**Software used:** OpenSesame 4.0.24
+**Software used:** OpenSesame 4.0.24  
 **Experiment Type:** Online  
 **Languages supported:** English (EN) = default, German (DE), Spanish (ES), French (FR). Further languages can be added, which requires simple changes in the code and updating the `.csv` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
 
 ---------------------------------------
 ## GENERAL INSTRUCTIONS
 
-This experiment is built using [OpenSesame](osdoc.cogsci.nl) 4.0.24. To run this experiment online, it utilizes the [OSWeb](https://osdoc.cogsci.nl/4.1/manual/osweb/osweb/) backend. Please check the version you are using, as older OpenSesame versions will likely crash. 
+This experiment is built using [OpenSesame]( https://osdoc.cogsci.nl/) 4.0.24. To run this experiment online, it utilizes the [OSWeb](https://osdoc.cogsci.nl/4.1/manual/osweb/osweb/) backend. Please check the version you are using, as older OpenSesame versions will likely crash. 
 If you are unfamiliar with OpenSesame, please refer to the [documentation](osdoc.cogsci.nl) on their website. This README specifically details the structure and customization of this MBRT implementation.  
 
 ---------------------------------------
 ## SETUP INSTRUCTIONS
 
 To edit or run this this task locally, you need to have **OpenSesame** installed.  
-To run the task online, you will likely need a [JATOS server]( https://www.jatos.org/). At the time of writing, [MindProbe](https://mindprobe.eu/) serves as a JATOS server free of charge.  
+To run the task online, you will likely need a [JATOS server](https://www.jatos.org/). At the time of writing, [MindProbe](https://mindprobe.eu/) serves as a JATOS server free of charge.  
 A script for data preparation in [R](https://www.r-project.org/) (4.5.2) is provided.  
 
 **Step-by-step instructions:**  
@@ -219,7 +219,7 @@ The sequence of a single trial is as follows:
 ---------------------------------------
 ## OUTPUT
 
-Following step 6 in the [step-by-step instructions](#EXPERIMENT-SETTINGS-(parameters-to-choose)), the data is exported from JATOS as a single `.txt` file containing all participant responses in **JSON format**.
+Following step 6 in the [step-by-step instructions](#SETUP-INSTRUCTIONS), the data is exported from JATOS as a single `.txt` file containing all participant responses in **JSON format**.
 
 The provided `data-prep.R` script is designed to read the `.txt`  file in JSON format, extract relevant observations from the test blocks, and save the processed data as `data.rdata` in the `data` folder.
 
@@ -227,7 +227,7 @@ The provided `data-prep.R` script is designed to read the `.txt`  file in JSON f
 
 The script will generate `data.rdata`, which contains two dataframes: `data_long_tbl` (trial-level data) and `data_wide` (demographics).
 
-> **Note:** This script relies on the standard experiment structure. If modifications were made beyond the configurable [Experiment Settings](#EXPERIMENT-SETTINGS-(parameters-to-choose)), the code may need adaptation. Additionally, raw data should always be inspected and cleaned of outliers or errors prior to statistical analysis.
+> **Note:** This script relies on the standard experiment structure. If modifications were made beyond the configurable [Experiment Settings](#available-parameters), the code may need adaptation. Additionally, raw data should always be inspected and cleaned of outliers or errors prior to statistical analysis.
 
 ### Variable Documentation
 
