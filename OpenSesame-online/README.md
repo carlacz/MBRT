@@ -183,6 +183,7 @@ You can allow participants to choose specific settings themselves (e.g., their p
 In the above example, participants will be asked to select their preferred language at the start of every run.
 ### Disable Demographic Questions
 The experiment includes three demographic questions (Age, Sex, Handedness) by default. We incorporate these questions to facilitate the **creation of norms** that will facilitate the interpretation of individual scores.  
+
 **We welcome contributions to this initiative!** If you wish to submit your data, please follow the steps outlined on the [platform website](link). When uploading data from specific populations (e.g., stroke patients), please ensure you provide the necessary context.
 If you do not wish to contribute, you can disable the demographic questions. 
 1.  Click on the `experiment` item in the Overview tab.
