@@ -218,7 +218,7 @@ The sequence of a single trial is as follows:
 ---------------------------------------
 ## OUTPUT
 
-Following step 6 in the [step-by-step instructions](#step-by-step-instructions), the data is exported from JATOS as a single `.txt` file containing all participant responses in **JSON format**.
+Following step 6 in the [step-by-step instructions](#EXPERIMENT-SETTINGS), the data is exported from JATOS as a single `.txt` file containing all participant responses in **JSON format**.
 
 The provided `data-prep.R` script is designed to read the `.txt`  file in JSON format, extract relevant observations from the test blocks, and save the processed data as `data.rdata` in the `data` folder.
 
@@ -226,7 +226,7 @@ The provided `data-prep.R` script is designed to read the `.txt`  file in JSON f
 
 The script will generate `data.rdata`, which contains two dataframes: `data_long_tbl` (trial-level data) and `data_wide` (demographics).
 
-> **Note:** This script relies on the standard experiment structure. If modifications were made beyond the configurable [Experiment Settings](#experiment-settings-parameters), the code may need adaptation. Additionally, raw data should always be inspected and cleaned of outliers or errors prior to statistical analysis.
+> **Note:** This script relies on the standard experiment structure. If modifications were made beyond the configurable [Experiment Settings](# EXPERIMENT-SETTINGS), the code may need adaptation. Additionally, raw data should always be inspected and cleaned of outliers or errors prior to statistical analysis.
 
 ### Variable Documentation
 
@@ -257,13 +257,10 @@ The script will generate `data.rdata`, which contains two dataframes: `data_long
 | `age` | integer | Participant age in years. |
 | `sex` | character | Participant sex ("f" = female, "m" = male, "d" = diverse). |
 | `handedness` | character | Participant handedness ("l" = left, "r" = right) or NA. |
-
 -----------------
-
 As developers, we are not responsible for implementing the task in every use case. 
 OpenSesame version updates might require adjustments in the experiment file.  
 Feel free to contribute!
-
 -------
 ## REFERENCE
 Please cite [Czilczer et al. (2025)](DOI) when using this resource.
