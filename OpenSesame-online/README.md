@@ -3,7 +3,7 @@
 **Author:** Carla Czilczer, 16/12/2025  
 **Software used:** OpenSesame 4.1.6
 **Experiment Type:** Online  
-**Languages supported:** English (EN) = default, German (DE), Spanish (ES), French (FR). Further languages can be added, which requires simple changes in the code and updating the `.csv` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
+**Languages supported:** English (EN) = default, German (DE) (Spanish (ES), French (FR) coming soon!). Further languages can be added, which requires simple changes in the code and updating the `.csv` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
 
 ---------------------------------------
 ## GENERAL INSTRUCTIONS
