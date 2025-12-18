@@ -8,13 +8,13 @@
 ---------------------------------------
 ## GENERAL INSTRUCTIONS
 
-This experiment is built using [OpenSesame]( https://osdoc.cogsci.nl/) 4.1.6. To run this experiment online, it utilizes the [OSWeb](https://osdoc.cogsci.nl/4.1/manual/osweb/osweb/) backend. Please check the version you are using, as older OpenSesame versions will likely crash. 
+This experiment is built using [OpenSesame]( https://osdoc.cogsci.nl/) 4.1.6. To run this experiment online, it utilizes the [OSWeb](https://osdoc.cogsci.nl/4.1/manual/osweb/osweb/) backend. Please check the version you are using, as older OpenSesame versions might crash. 
 If you are unfamiliar with OpenSesame, please refer to the [documentation](osdoc.cogsci.nl) on their website. This README specifically details the structure and customization of this MBRT implementation.  
 
 ---------------------------------------
 ## SETUP INSTRUCTIONS
 
-To edit or run this this task locally, you need to have **OpenSesame** installed.  
+To edit or run this task, you need to have **OpenSesame** installed.  
 To run the task online, you will likely need a [JATOS server](https://www.jatos.org/). At the time of writing, [MindProbe](https://mindprobe.eu/) serves as a JATOS server free of charge.  
 A script for data preparation in [R](https://www.r-project.org/) (4.5.2) is provided.  
 
@@ -268,7 +268,3 @@ Feel free to contribute!
 -------
 ## REFERENCE
 Please cite [Czilczer et al. (2025)](DOI) when using this resource.
-
-
-
-
