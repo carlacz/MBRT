@@ -14,7 +14,7 @@ If you are unfamiliar with OpenSesame, please refer to the [documentation](osdoc
 ---------------------------------------
 ## SETUP INSTRUCTIONS
 
-To edit or run this task, you need to have **OpenSesame** 4.0.24 or superior installed.  
+To edit or run this task, you need to have **OpenSesame** installed.  
 To run the task online, you will likely need a [JATOS server](https://www.jatos.org/). At the time of writing, [MindProbe](https://mindprobe.eu/) serves as a JATOS server free of charge.  
 A script for data preparation in [R](https://www.r-project.org/) (4.5.2) is provided.  
 
@@ -80,7 +80,7 @@ bye_msg;You have finished the experiment;Has terminado el experimento;Sie haben 
 
 
 ### 4. Update the experiment
-1. Open the experiment file `MBRT_OpenSesame_online.osexp`
+1. Open the experiment file `MBRT_online.osexp`
 2. Go to the **overview tab**
 3. In the `experiment_sequence`, click on `language_localiser`
 4. In the window with listed language names, add your new language name (e.g., `Italian`) in a new row — it must exactly match the entry in your `language_localiser.csv`
@@ -114,8 +114,8 @@ _For more information on how to implement a language localizer in OpenSesame, se
 ---------------------------------------
 ## TECHNICAL DETAILS
 The decompressed repository includes the following files and subfolders:
-* `MBRT_OpenSesame_online.osexp`: The main experiment file; needed to change the experiment settings.
-* `MBRT_OpenSesame_online.jzip`: The experiment file as JATOS archive; ready to be uploaded to the JATOS server.
+* `MBRT_online.osexp`: The main experiment file; needed to change the experiment settings.
+* `MBRT_online.jzip`: The experiment file as JATOS archive; ready to be uploaded to the JATOS server.
 * `Language_localiser.csv`: Configuration files for language selection (language + ISO code).
 * `Demographics.csv`: Questions and translations for the demographics form.
 * `Messages.csv`: General messages not specific to task instructions (e.g., welcome, advance, wrong key, goodbye).
@@ -268,3 +268,7 @@ Feel free to contribute!
 -------
 ## REFERENCE
 Please cite [Czilczer et al. (2025)](DOI) when using this resource.
+
+
+
+
