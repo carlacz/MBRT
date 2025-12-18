@@ -40,14 +40,15 @@ This experiment uses external `.xlsx` files to manage text and translations. Thi
 - `Instructions.xlsx`
 - `Block_messages.xlsx`
 ### 2. Extend `language_localiser-semicolon.xlsx` by adding a new row  
-| language | ISO_code | 
+**| language | ISO_code |**
 | :--- | :--- | 
 | English | EN | 
 | Spanish | ES | 
 | German | DE | 
 | French | FR |
+
 Add your new language (e.g., Italian) by inserting the _language_ and _ISO_code_ in a **new row**:
-| language | ISO_code | 
+**| language | ISO_code |** 
 | :--- | :--- | 
 | English | EN | 
 | Spanish | ES | 
