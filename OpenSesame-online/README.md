@@ -14,7 +14,7 @@ If you are unfamiliar with OpenSesame, please refer to the [documentation](osdoc
 ---------------------------------------
 ## SETUP INSTRUCTIONS
 
-To edit or run this task, you need to have **OpenSesame** installed.  
+To edit or run this task, you need to have **OpenSesame** 4.0.24 or superior installed.  
 To run the task online, you will likely need a [JATOS server](https://www.jatos.org/). At the time of writing, [MindProbe](https://mindprobe.eu/) serves as a JATOS server free of charge.  
 A script for data preparation in [R](https://www.r-project.org/) (4.5.2) is provided.  
 
