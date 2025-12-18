@@ -153,7 +153,7 @@ You can hard-code new default settings within the script. To do this:
 2.  Click on the `preparations` inline script.
 3.  Modify lines **12–23** to your desired values. You **MUST NOT** modify any other lines in the script!
 
-![Preparations script](../preparations_inline-script.png)
+![Preparations script](../preparations_inline-script_online.png)
 
 > **⚠️ Important:** If you change the default language, you must update **four** related variables to match the ISO codes found in `Language_localiser.csv`. You must update: `selected_language`, `ISO_code`, `selected_ISO`, and `selected_ISO_low`.
 
