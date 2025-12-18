@@ -119,7 +119,7 @@ The decompressed repository includes the following files and subfolders:
 ---------------------------------------
 ## EXPERIMENT SETTINGS (parameters to choose)
 The experiment file allows you to customize various settings. In the **Overview** tab, under the item `experiment_settings`, you will find the following variables that can be modified:
-![experiment settings](../experiment-settings_local.png)
+![experiment settings](../pngs-READMEs/experiment-settings_local.png)
 
 By default, **the experimenter will set these settings** via dialog boxes **at the beginning of each run**.  
 
@@ -139,7 +139,7 @@ Instead of selecting the experiment settings at the beginning of each run, it is
 
 In OpenSesame, you can **disable specific sequences or items** by clicking on the parent sequence in the Overview tab. 
 In the tab that opens on the right, you will see a **Run if** statement next to each item. Set this statement to `False` instead of `True` to disable it. If you disable the whole `experiment_settings` sequence within the `experiment` sequence (see below), the **Default settings** listed in the table above will be used. 
-![experiment sequence local](../experiment-sequence_local.png) 
+![experiment sequence local](../pngs-READMEs/experiment-sequence_local.png) 
 
 ### Changing the Defaults 
 You can also **change the defaults** by hard-coding new values within the script.  
@@ -148,7 +148,7 @@ To do this:
 2. Click on the `preparations` inline script. 
 3. Modify lines **17–26** to your desired values. 
 You **MUST NOT** modify any other lines in the script! 
-![Preparations script](../preparations_inline-script_local.png)
+![Preparations script](../pngs-READMEs/preparations_inline-script_local.png)
 > **⚠️ Important:** If you change the default language, you must update **four** related variables to match the ISO codes found in `Language_localiser.xlsx`. You must update: `selected_language`, `ISO_code`, `selected_ISO`, and `selected_ISO_low`. 
 
 **Example configuration:**
@@ -167,7 +167,7 @@ selected_n_reps = 1;
 ```
 
 Instead of disabling the whole `experiment_settings` sequence, you can also set defaults for specific settings only. For instance, if your whole sample is German-speaking, you can hard-code the language default in the `preparations` inline script (see above) and disable only the `language_localiser` item (see below).
-![experiment settings sequence](../experiment-settings_sequence_local.png)
+![experiment settings sequence](../pngs-READMEs/experiment-settings_sequence_local.png)
 
 ### Disable Demographic Questions
 The experiment includes three demographic questions (Age, Sex, Handedness) by default. We incorporate these questions to facilitate the **creation of norms** that will facilitate the interpretation of individual scores.  
