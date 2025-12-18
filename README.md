@@ -10,7 +10,7 @@ The most updated versions can be found in this repository.
 Subsequent updates in native software ([PsychoPy](https://www.psychopy.org/index.html) and [OpenSesame](https://osdoc.cogsci.nl/)) may need adjustments. As developers, we are not responsible for implementing these in every use case.
 
 An example of the setup is shown below.
-![MBRT-demo](MBRT-demo.gif)
+![MBRT-demo](pngs_READMEs/MBRT-demo.gif)
 
 ## Repository information
 This repository has four main folders, which contain **PsychoPy** (`.psyexp`) and **OpenSesame** (`.osexp`) experiments, together with associated files to run them **locally** (lab/desktop experiments) or **online** (in a browser).  
