@@ -4,6 +4,7 @@
 **Software used:** OpenSesame 4.0.24  
 **Experiment Type:** Local  
 **Languages supported:** English (EN) = default, German (DE) (Spanish (ES) and French (FR) comming soon!). Further languages can be added, which requires simple changes in the code and updating the `.xlsx` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
+
 ---------------------------------------
 ## GENERAL INSTRUCTIONS
 
