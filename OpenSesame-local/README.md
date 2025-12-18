@@ -192,6 +192,8 @@ selected_n_angles = "6 (0°, 45°, 135°, 180°, 225°, 315°)"
 selected_body_views = "Front and Back" 
 selected_limbs = "Arms and Legs" selected_n_reps = 1
 
+
+
 Instead of disabling the whole `experiment_settings` sequence, you can also set defaults for specific settings only. For instance, if your whole sample is German-speaking, you can hard-code the language default in the `preparations` inline script (see above) and disable only the `language_localiser` item (see below).
 ![experiment settings sequence](../experiment-settings_sequence_local.png)
 
