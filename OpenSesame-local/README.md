@@ -8,7 +8,7 @@
 ---------------------------------------
 ## GENERAL INSTRUCTIONS
 
-This experiment is built using [OpenSesame]( https://osdoc.cogsci.nl/) 4.1.6. To run this experiment local, it utilizes the [xpyriment]( https://osdoc.cogsci.nl/4.1/manual/backends/) backend. Please check the version you are using, as older OpenSesame versions might crash. 
+This experiment is built using [OpenSesame]( https://osdoc.cogsci.nl/) 4.0.24. To run this experiment local, it utilizes the [xpyriment]( https://osdoc.cogsci.nl/4.1/manual/backends/) backend. Please check the version you are using, as older OpenSesame versions might crash. 
 If you are unfamiliar with OpenSesame, please refer to the [documentation](osdoc.cogsci.nl) on their website. This README specifically details the structure and customization of this MBRT implementation.  
 
 ---------------------------------------
