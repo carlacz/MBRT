@@ -134,19 +134,22 @@ By default, **the experimenter will set these settings** via dialog boxes **at t
 | `feedback` | • **0.3** (Default)<br>• 0.5<br>• 0.8<br>• 1<br>• No feedback | Duration of feedback (in seconds) per trial in the test blocks. |
 | `language_localiser`| • **English** (Default)<br>• German | Sets the default language for the experiment. |
 
-### Disable parameter selection
-In OpenSesame, you can **disable specific sequences or items** by clicking on the sequence this is located in in the overview tab. In the tab that opens to the right, you can see a **Run if** statement next to each of the items included in the sequence. Set this statement to `False` instead of `True` to disable it.
-If you disable the whole `experiment_sequence` within the `experiment` sequence (see below), the **Default settings** listed in the above table will be used. 
-![experiment sequence local](../experiment-sequence_local.png)
+### Disable Parameter Selection 
+Instead of selecting the experiment settings at the beginning of each run, it is possible to **hard-code defaults** and **disable the manual selection** of specific (or all) settings:
 
-However, you can also **change the defaults** through hard-coding new default settings within the script. To do this:
-1.  Go to the **Overview** tab.
-2.  Click on the `preparations` inline script.
-3.  Modify lines **17–26** to your desired values. You **MUST NOT** modify any other lines in the script!
+In OpenSesame, you can **disable specific sequences or items** by clicking on the parent sequence in the Overview tab. 
+In the tab that opens on the right, you will see a **Run if** statement next to each item. Set this statement to `False` instead of `True` to disable it. If you disable the whole `experiment_settings` sequence within the `experiment` sequence (see below), the **Default settings** listed in the table above will be used. 
+![experiment sequence local](../experiment-sequence_local.png) 
 
+### Changing the Defaults 
+You can also **change the defaults** by hard-coding new values within the script.  
+To do this: 
+1. Go to the **Overview** tab. 
+2. Click on the `preparations` inline script. 
+3. Modify lines **17–26** to your desired values. 
+You **MUST NOT** modify any other lines in the script! 
 ![Preparations script](../preparations_inline-script_local.png)
-
-> **⚠️ Important:** If you change the default language, you must update **four** related variables to match the ISO codes found in `Language_localiser.xlsx`. You must update: `selected_language`, `ISO_code`, `selected_ISO`, and `selected_ISO_low`.
+> **⚠️ Important:** If you change the default language, you must update **four** related variables to match the ISO codes found in `Language_localiser.xlsx`. You must update: `selected_language`, `ISO_code`, `selected_ISO`, and `selected_ISO_low`. 
 
 **Example configuration:**
 ```python
@@ -162,37 +165,6 @@ selected_body_views = "Front and Back"
 selected_limbs = "Arms and Legs"
 selected_n_reps = 1;
 ```
-
-### Disable Parameter Selection 
-Instead of selecting the experiment settings at the beginning of each run, it is possible to **hard-code defaults** and **disable the manual selection** of specific (or all) settings:
-
-In OpenSesame, you can **disable specific sequences or items** by clicking on the parent sequence in the Overview tab. 
-In the tab that opens on the right, you will see a **Run if** statement next to each item. Set this statement to `False` instead of `True` to disable it. If you disable the whole `experiment_settings` sequence within the `experiment` sequence (see below), the **Default settings** listed in the table above will be used. 
-![experiment sequence local](../experiment-sequence_local.png) 
-
-### Changing the Defaults 
-You can **change the defaults** by hard-coding new values within the script.  
-To do this: 
-1. Go to the **Overview** tab. 
-2. Click on the `preparations` inline script. 
-3. Modify lines **17–26** to your desired values. 
-You **MUST NOT** modify any other lines in the script! 
-![Preparations script](../preparations_inline-script_local.png)
-> **⚠️ Important:** If you change the default language, you must update **four** related variables to match the ISO codes found in `Language_localiser.xlsx`. You must update: `selected_language`, `ISO_code`, `selected_ISO`, and `selected_ISO_low`. 
-**Example configuration:** 
-```python 
-selected_language = "German" 
-ISO_code = "DE" 
-selected_ISO = "de" 
-selected_ISO_low = "de" 
-
-selected_response_mode = "Both hands" 
-selected_feedback = "0.8" 
-selected_n_angles = "6 (0°, 45°, 135°, 180°, 225°, 315°)" 
-selected_body_views = "Front and Back" 
-selected_limbs = "Arms and Legs" selected_n_reps = 1
-
-
 
 Instead of disabling the whole `experiment_settings` sequence, you can also set defaults for specific settings only. For instance, if your whole sample is German-speaking, you can hard-code the language default in the `preparations` inline script (see above) and disable only the `language_localiser` item (see below).
 ![experiment settings sequence](../experiment-settings_sequence_local.png)
