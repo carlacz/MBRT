@@ -172,7 +172,7 @@ Instead of disabling the whole `experiment_settings` sequence, you can also set 
 ### Disable Demographic Questions
 The experiment includes three demographic questions (Age, Sex, Handedness) by default. We incorporate these questions to facilitate the **creation of norms** that will facilitate the interpretation of individual scores.  
 
-**We welcome contributions to this initiative!** If you wish to submit your data, please follow the steps outlined on the [platform website](link). When uploading data from specific populations (e.g., stroke patients), please ensure you provide the necessary context.
+**We welcome contributions to this initiative!** If you wish to submit your data, please follow the steps outlined on the [platform website](https://movementimageryability.github.io/#contribute). When uploading data from specific populations (e.g., stroke patients), please ensure you provide the necessary context.
 If you do not wish to contribute, you can disable the demographic questions. 
 1.  Click on the `experiment` item in the Overview tab.
 2.  Locate the `demographics_sequence` in the tab to the right. 
