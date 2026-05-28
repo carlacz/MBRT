@@ -3,7 +3,7 @@
 **Author:** Carla Czilczer, 18/12/2025  
 **Software used:** OpenSesame 4.0.24  
 **Experiment Type:** Local  
-**Languages supported:** English (EN) = default, German (DE) (Spanish (ES) and French (FR) comming soon!). Further languages can be added, which requires simple changes in the code and updating the `.xlsx` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
+**Languages supported:** English (EN) = default, German (DE), Spanish (ES) and French (FR). Further languages can be added, which requires simple changes in the code and updating the `.xlsx` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
 
 ---------------------------------------
 ## GENERAL INSTRUCTIONS
@@ -30,7 +30,7 @@ A script for data preparation in [R](https://www.r-project.org/) (4.5.2) is prov
 
 This experiment uses external `.xlsx` files to manage text and translations. This makes adding new languages relatively easy, but strict formatting rules apply.
 
-**How it works:** Within the experiment, either a default language can be configured (see [changing defaults](#Changing-the-Defaults)), or participants can select their preferred language at the start, otherwise, the default “English” is applied). The experiment uses the corresponding _ISO_code_ (e.g., "EN", "DE") to retrieve the corresponding text from columns in the external `.xlsx` files (e.g., `Instructions.xlsx`, `Block_messages.xlsx`).
+**How it works:** Within the experiment, either a default language can be configured (see [changing defaults](#Changing-the-Defaults)), or participants can select their preferred language at the start, otherwise, the default “English” is applied). The experiment uses the corresponding _ISO_code_ (e.g., "EN", "DE", "ES", "FR") to retrieve the corresponding text from columns in the external `.xlsx` files (e.g., `Instructions.xlsx`, `Block_messages.xlsx`).
 
 ## **Adding a new language:**
 ### 1. Open the relevant `.xlsx` files
@@ -40,7 +40,7 @@ This experiment uses external `.xlsx` files to manage text and translations. Thi
 - `Instructions.xlsx`
 - `Block_messages.xlsx`
 ### 2. Extend `language_localiser-semicolon.xlsx` by adding a new row  
-**| language | ISO_code |**
+| language | ISO_code |
 | :--- | :--- | 
 | English | EN | 
 | Spanish | ES | 
@@ -48,7 +48,7 @@ This experiment uses external `.xlsx` files to manage text and translations. Thi
 | French | FR |
 
 Add your new language (e.g., Italian) by inserting the _language_ and _ISO_code_ in a **new row**:
-**| language | ISO_code |** 
+| language | ISO_code |
 | :--- | :--- | 
 | English | EN | 
 | Spanish | ES | 
@@ -119,7 +119,7 @@ The decompressed repository includes the following files and subfolders:
 ---------------------------------------
 ## EXPERIMENT SETTINGS (parameters to choose)
 The experiment file allows you to customize various settings. In the **Overview** tab, under the item `experiment_settings`, you will find the following variables that can be modified:  
-![experiment settings](../pngs-READMEs/experiment-settings_local.png)
+![experiment settings](../pngs-READMEs/experiment-settings_local-v2.png)
 
 By default, **the experimenter will set these settings** via dialog boxes **at the beginning of each run**.  
 
@@ -139,7 +139,7 @@ Instead of selecting the experiment settings at the beginning of each run, it is
 
 In OpenSesame, you can **disable specific sequences or items** by clicking on the parent sequence in the Overview tab. 
 In the tab that opens on the right, you will see a **Run if** statement next to each item. Set this statement to `False` instead of `True` to disable it. If you disable the whole `experiment_settings` sequence within the `experiment` sequence (see below), the **Default settings** listed in the table above will be used.   
-![experiment sequence local](../pngs-READMEs/experiment-sequence_local.png) 
+![experiment sequence local](../pngs-READMEs/experiment-sequence_local-v2.png) 
 
 ### Changing the Defaults 
 You can also **change the defaults** by hard-coding new values within the script.  
@@ -148,7 +148,7 @@ To do this:
 2. Click on the `preparations` inline script. 
 3. Modify lines **17–26** to your desired values. 
 You **MUST NOT** modify any other lines in the script!  
-![Preparations script](../pngs-READMEs/preparations_inline-script_local.png)
+![Preparations script](../pngs-READMEs/preparations_inline-script_local-v2.png)
 > **⚠️ Important:** If you change the default language, you must update **four** related variables to match the ISO codes found in `Language_localiser.xlsx`. You must update: `selected_language`, `ISO_code`, `selected_ISO`, and `selected_ISO_low`. 
 
 **Example configuration:**
@@ -167,7 +167,7 @@ selected_n_reps = 1;
 ```
 
 Instead of disabling the whole `experiment_settings` sequence, you can also set defaults for specific settings only. For instance, if your whole sample is German-speaking, you can hard-code the language default in the `preparations` inline script (see above) and disable only the `language_localiser` item (see below).  
-![experiment settings sequence](../pngs-READMEs/experiment-settings_sequence_local.png)
+![experiment settings sequence](../pngs-READMEs/experiment-settings_sequence_local-v2.png)
 
 ### Disable Demographic Questions
 The experiment includes three demographic questions (Age, Sex, Handedness) by default. We incorporate these questions to facilitate the **creation of norms** that will facilitate the interpretation of individual scores.  
@@ -221,7 +221,7 @@ The script will generate `data.rdata`, which contains two dataframes: `data_long
 | `phase` | character | Experiment phase (e.g., "MBRT_testblock"). |
 | `n_testbl` | integer | Test block index (1-4 if >1 repetitions selected). |
 | `n_trial` | integer | Trial index (within the test phase). |
-| `correct` | integer | Correctness flag (1 = correct, 0 = incorrect). |
+| `mbrt_correct` | integer | Correctness flag (1 = correct, 0 = incorrect). |
 | `solution` | character | Correct response code for the trial (e.g., "s", "g", "l", "h"). |
 | `mbrt_angle` | numeric | Stimulus rotation (degrees). |
 | `mbrt_limb` | factor | Limb shown (e.g., "arm", "leg"). |
@@ -238,12 +238,13 @@ The script will generate `data.rdata`, which contains two dataframes: `data_long
 | `subject_nr` | character | Participant ID. |
 | `age` | integer | Participant age in years. |
 | `sex` | character | Participant sex ("f" = female, "m" = male, "d" = diverse). |
-| `handedness` | character | Participant handedness ("l" = left, "r" = right). |
+| `handedness` | character | Participant handedness ("l" = left, "r" = right, "b" = ambidextrous). |
 
 -----
 
-OpenSesame version updates might require adjustments in the experiment file.  
+OpenSesame version updates may require adjustments in the experiment file. 
 As developers, we are not responsible to implementing the task in every use case.  
+Before collecting data, always test the display geometry, stylus responses, timing, localized instructions, and data output.  
 Feel free to contribute!
 
 -------
