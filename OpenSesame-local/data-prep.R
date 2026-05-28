@@ -130,18 +130,18 @@ if (length(dem_cols) > 0) {
 }
 
 # -------- Rename raw logger columns to short names (if present) -------------
-# raw names seen in the experiment: correct_response, response_time_trial_response, response_trial_response
+# raw names seen in the experiment: mbrt_correct_response, response_time_trial_response, response_trial_response
 rename_if_exists <- function(df, old, new) {
   if (old %in% names(df)) names(df)[names(df) == old] <- new
   df
 }
-df <- rename_if_exists(df, "correct_response", "correct")
+df <- rename_if_exists(df, "mbrt_correct_response", "mbrt_correct")
 df <- rename_if_exists(df, "response_time_trial_response", "RT")
 df <- rename_if_exists(df, "response_trial_response", "trial_response")
 
 # -------- Keep only relevant columns (if they exist) -----------------------
 wanted <- c("subject_nr", "phase", "n_testbl", "n_trial",
-            "correct", "solution", "mbrt_angle", "mbrt_limb", "mbrt_side",
+            "mbrt_correct", "solution", "mbrt_angle", "mbrt_limb", "mbrt_side",
             "mbrt_view", "RT", "trial_response")
 available <- intersect(wanted, names(df))
 if (length(setdiff(wanted, available)) > 0) {
@@ -172,7 +172,7 @@ if ("phase" %in% names(df)) {
 #  - phase         : experiment phase (e.g. "MBRT_testblock", "MBRT_practice") : character
 #  - n_testbl      : test block index (1-4 if >1 repetitions selected in experiment) : integer
 #  - n_trial       : trial index (within test phase) : integer
-#  - correct       : correctness flag (1 = correct, 0 = incorrect) : integer (0/1) 
+#  - mbrt_correct  : correctness flag (1 = correct, 0 = incorrect) : integer (0/1) 
 #  - solution      : correct response code for the trial (e.g. "s", "g", "l", "h") : character
 #  - mbrt_angle    : stimulus rotation (degrees or label) : numeric 
 #  - mbrt_limb     : limb shown (e.g., "arm", "leg") : factor
