@@ -264,6 +264,7 @@ The script will generate `data.rdata`, which contains two dataframes: `data_long
 OpenSesame version updates might require adjustments in the experiment file.  
 As developers, we are not responsible to implementing the task in every use case.  
 Before collecting data, always test the experiment.
+
 Feel free to contribute!
 
 -------
