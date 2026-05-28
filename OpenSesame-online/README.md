@@ -1,9 +1,9 @@
 # MENTAL BODY ROTATION TASK (MBRT)
 
-**Author:** Carla Czilczer, 16/12/2025  
+**Author:** Carla Czilczer, 28/05/2026  
 **Software used:** OpenSesame 4.1.6  
 **Experiment Type:** Online  
-**Languages supported:** English (EN) = default, German (DE) (Spanish (ES), French (FR) coming soon!). Further languages can be added, which requires simple changes in the code and updating the `.csv` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
+**Languages supported:** English (EN) = default, German (DE), Spanish (ES), French (FR). Further languages can be added, which requires simple changes in the code and updating the `.csv` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
 
 ---------------------------------------
 ## GENERAL INSTRUCTIONS
@@ -24,7 +24,7 @@ A script for data preparation in [R](https://www.r-project.org/) (4.5.2) is prov
 3.  Name and click on the study to **open the dashboard**.
 4.  Click on “Study Links”, **choose** your preferred study link type (e.g., Personal Single Link, General Multiple Link, MTurk), click on the “Study Link” button next to it and **copy the URL**.
 5.  **Distribute** the generated link(s) to your participants. They run the task directly in their web browser.
-6.  To **export data**, navigate in JATOS to “Results” ➝ Select the data you want to keep (e.g., “All”) in the top bar, select “Export Results” ➝ “Data only” ➝ “Plain Text” and save the `.txt` file into the `data` folder located inside the unzipped repository, and **rename** it to `data.txt`. This file involves the data in JSON-format.
+6.  To **export data**, navigate in JATOS to “Results” ➝ Select the data you want to keep (e.g., “All”) in the top bar, select “Export Results” ➝ “Data only” ➝ “Plain Text” and save the `.txt` file into the `data` folder located inside the unzipped repository, and **rename** it to `data.txt`. This **single** `data.txt` file involves the data of **all selected** participants in JSON-format.
 7.  **Process the data** using the provided `.R` script.
 
 ---------------------------------------
@@ -32,7 +32,7 @@ A script for data preparation in [R](https://www.r-project.org/) (4.5.2) is prov
 
 This experiment uses external `.csv` files to manage text and translations. This makes adding new languages relatively easy, but strict formatting rules apply.
 
-**How it works:** Within the experiment, either a default language can be configured (see [changing defaults](#Changing-the-Defaults)), or participants can select their preferred language at the start (see [letting participants select settings](#Letting-Participants-Select-Settings)), otherwise, the default “English” is applied). The experiment uses the corresponding _ISO_code_ (e.g., "EN", "DE") to retrieve the corresponding text from columns in the external `.csv` files (e.g., `Instructions.csv`, `Block_messages.csv`).
+**How it works:** Within the experiment, either a default language can be configured (see [changing defaults](#Changing-the-Defaults)), or participants can select their preferred language at the start (see [letting participants select settings](#Letting-Participants-Select-Settings)), otherwise, the default “English” is applied). The experiment uses the corresponding _ISO_code_ (e.g., "EN", "DE", "ES", "FR") to retrieve the corresponding text from columns in the external `.csv` files (e.g., `Instructions.csv`, `Block_messages.csv`).
 
 ## **Adding a new language:**
 ### 1. Open the relevant `.csv` files
@@ -125,13 +125,13 @@ The decompressed repository includes the following files and subfolders:
     * `Stimuli_[...].csv`: Loop files controlling the trial sequence. These are dynamically called depending on the number of repetitions and angles selected (e.g., `Stimuli_4angles_all.csv`, `Stimuli_6angles_def_all.csv`, etc.).
 * **Folder** `mbrt_images`: `.png` files for all visual stimuli.
 * **Folder** `data`: Empty folder designated for storing the `.txt` file exported from JATOS.
-* `data-prep.R`: R script that reads in `data.txt`, generates `data.rdata` file and stores it in the `data` folder. `data.rdata` contains the testblock data in long format and demographic data in wide format.
+* `data-prep.R`: R script that reads in a single `data.txt` file involving data of all participants, generates `data.rdata` file and stores it in the `data` folder. `data.rdata` contains the testblock data in long format and demographic data in wide format.
 
 ---------------------------------------
 ## EXPERIMENT SETTINGS (parameters to choose)
 The experiment file allows you to customize various settings. In the **Overview** tab, under the item `experiment_settings`, you will find the following variables that can be modified:
 
-![experiment settings](../pngs-READMEs/experiment-settings_online.png)
+![experiment settings](../pngs-READMEs/experiment-settings_online-v2.png)
 
 ### Available Parameters
 
@@ -153,7 +153,7 @@ You can hard-code new default settings within the script. To do this:
 2.  Click on the `preparations` inline script.
 3.  Modify lines **12–23** to your desired values. You **MUST NOT** modify any other lines in the script!
 
-![Preparations script](../pngs-READMEs/preparations_inline-script_online.png)
+![Preparations script](../pngs-READMEs/preparations_inline-script_online-v2.png)
 
 > **⚠️ Important:** If you change the default language, you must update **four** related variables to match the ISO codes found in `Language_localiser.csv`. You must update: `selected_language`, `ISO_code`, `selected_ISO`, and `selected_ISO_low`.
 
@@ -179,7 +179,7 @@ You can allow participants to choose specific settings themselves (e.g., their p
 2.  Locate the setting you want the participant to control.
 3.  Change the "Run if" statement for that setting from “False” to “True”.
 
-![experiment settings sequence](../pngs-READMEs/experiment-settings_online_sequence.png)  
+![experiment settings sequence](../pngs-READMEs/experiment-settings_online_sequence-v2.png)  
 In the above example, participants will be asked to select their preferred language at the start of every run.
 ### Disable Demographic Questions
 The experiment includes three demographic questions (Age, Sex, Handedness) by default. We incorporate these questions to facilitate the **creation of norms** that will facilitate the interpretation of individual scores.  
@@ -191,7 +191,7 @@ If you do not wish to contribute, you can disable the demographic questions.
 3.  Change the corresponding “Run if” from “True” to “False”.
 
 ### Saving and Exporting
-To try out the experiment after changing settings or adding a new language, click on the blue play button. (This mode is **not** suitable for data collection, only for debugging!)
+To try out the experiment after changing settings or adding a new language, click on the blue play button. (This mode is **not** suitable for data collection, only for debugging!) When updating the experiment multiple times, it is recommended to clear the browser’s cache to ensure the updates are displayed correctly.
 
 Once you have finished your configuration, you must export the experiment for online use:
 
@@ -240,7 +240,7 @@ The script will generate `data.rdata`, which contains two dataframes: `data_long
 | `phase` | character | Experiment phase (e.g., "MBRT_testblock"). |
 | `n_testbl` | integer | Test block index (1-4 if >1 repetitions selected). |
 | `n_trial` | integer | Trial index (within the test phase). |
-| `correct` | integer | Correctness flag (1 = correct, 0 = incorrect). |
+| `mbrt_correct` | integer | Correctness flag (1 = correct, 0 = incorrect). |
 | `solution` | character | Correct response code for the trial (e.g., "s", "g", "l", "h"). |
 | `mbrt_angle` | numeric | Stimulus rotation (degrees). |
 | `mbrt_limb` | factor | Limb shown (e.g., "arm", "leg"). |
@@ -263,12 +263,9 @@ The script will generate `data.rdata`, which contains two dataframes: `data_long
 
 OpenSesame version updates might require adjustments in the experiment file.  
 As developers, we are not responsible to implementing the task in every use case.  
+Before collecting data, always test the experiment.
 Feel free to contribute!
 
 -------
 ## REFERENCE
 Please cite [Czilczer et al. (2026)](https://doi.org/10.31234/osf.io/9xjfb_v1) when using this resource.
-
-
-
-
