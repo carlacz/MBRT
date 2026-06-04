@@ -136,13 +136,13 @@ rename_if_exists <- function(df, old, new) {
   df
 }
 df <- rename_if_exists(df, "mbrt_correct_response", "mbrt_correct")
-df <- rename_if_exists(df, "response_time_trial_response", "RT")
+df <- rename_if_exists(df, "response_time_trial_response", "mbrt_rt")
 df <- rename_if_exists(df, "response_trial_response", "trial_response")
 
 # -------- Keep only relevant columns (if they exist) -----------------------
 wanted <- c("subject_nr", "phase", "n_testbl", "n_trial",
             "mbrt_correct", "solution", "mbrt_angle", "mbrt_limb", "mbrt_side",
-            "mbrt_view", "RT", "trial_response")
+            "mbrt_view", "mbrt_rt", "trial_response")
 available <- intersect(wanted, names(df))
 if (length(setdiff(wanted, available)) > 0) {
   message("Warning: missing columns - they will be omitted: ",
@@ -178,7 +178,7 @@ if ("phase" %in% names(df)) {
 #  - mbrt_limb     : limb shown (e.g., "arm", "leg") : factor
 #  - mbrt_side     : laterality ("left", "right") : factor
 #  - mbrt_view     : view ("front", "back") : factor
-#  - RT            : response time in milliseconds : numeric (ms)
+#  - mbrt_rt       : response time in milliseconds : numeric (ms)
 #  - trial_response: key pressed / response code (participant response) : character
 #
 # data_wide (if demographics were included): one row per subject with demographic fields:
