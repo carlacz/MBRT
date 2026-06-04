@@ -247,7 +247,7 @@ rename_if_exists <- function(df, old, new) {
 }
 
 df <- rename_if_exists(df, "mbrt_correct_response", "mbrt_correct")
-df <- rename_if_exists(df, "response_time_trial_response", "RT")
+df <- rename_if_exists(df, "response_time_trial_response", "mbrt_rt")
 df <- rename_if_exists(df, "response_trial_response", "trial_response")
 
 
@@ -264,7 +264,7 @@ wanted <- c(
   "mbrt_limb",
   "mbrt_side",
   "mbrt_view",
-  "RT",
+  "mbrt_rt",
   "trial_response"
 )
 
@@ -337,7 +337,7 @@ if ("phase" %in% names(df)) {
 #  - mbrt_limb     : limb shown (e.g. "arm", "leg") : factor
 #  - mbrt_side     : laterality ("left", "right") : factor
 #  - mbrt_view     : view ("front", "back") : factor
-#  - RT            : response time in milliseconds : numeric (ms)
+#  - mbrt_rt       : response time in milliseconds : numeric (ms)
 #  - trial_response: key pressed / response code
 #                    (participant response) : character
 #
