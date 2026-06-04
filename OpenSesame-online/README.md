@@ -246,7 +246,7 @@ The script will generate `data.rdata`, which contains two dataframes: `data_long
 | `mbrt_limb` | factor | Limb shown (e.g., "arm", "leg"). |
 | `mbrt_side` | factor | Laterality ("left", "right"). |
 | `mbrt_view` | factor | View ("front", "back"). |
-| `RT` | numeric | Response time in milliseconds (ms). |
+| `mbrt_rt` | numeric | Response time in milliseconds (ms). |
 | `trial_response` | character | Key pressed / response code (participant response). |
 
 #### 2. Demographic Data (`data_wide`)
