@@ -227,7 +227,7 @@ The script will generate `data.rdata`, which contains two dataframes: `data_long
 | `mbrt_limb` | factor | Limb shown (e.g., "arm", "leg"). |
 | `mbrt_side` | factor | Laterality ("left", "right"). |
 | `mbrt_view` | factor | View ("front", "back"). |
-| `RT` | numeric | Response time in milliseconds (ms). |
+| `mbrt_rt` | numeric | Response time in milliseconds (ms). |
 | `trial_response` | character | Key pressed / response code (participant response). |
 
 #### 2. Demographic Data (`data_wide`)
@@ -246,7 +246,6 @@ OpenSesame version updates may require adjustments in the experiment file.
 As developers, we are not responsible to implementing the task in every use case.  
 Before collecting data, always test the display geometry, stylus responses, timing, localized instructions, and data output.  
 Feel free to contribute!
-
 -------
 ## REFERENCE
 Please cite [Czilczer et al. (2026)](https://doi.org/10.31234/osf.io/9xjfb_v1) when using this resource.
