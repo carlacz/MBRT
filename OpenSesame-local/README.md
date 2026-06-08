@@ -1,6 +1,6 @@
 # MENTAL BODY ROTATION TASK (MBRT)
 
-**Author:** Carla Czilczer, 18/12/2025  
+**Author:** Carla Czilczer, 04/06/2026
 **Software used:** OpenSesame 4.0.24  
 **Experiment Type:** Local  
 **Languages supported:** English (EN) = default, German (DE), Spanish (ES) and French (FR). Further languages can be added, which requires simple changes in the code and updating the `.xlsx` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
