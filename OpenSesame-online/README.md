@@ -1,6 +1,6 @@
 # MENTAL BODY ROTATION TASK (MBRT)
 
-**Author:** Carla Czilczer, 28/05/2026  
+**Author:** Carla Czilczer, 04/06/2026  
 **Software used:** OpenSesame 4.1.6  
 **Experiment Type:** Online  
 **Languages supported:** English (EN) = default, German (DE), Spanish (ES), French (FR). Further languages can be added, which requires simple changes in the code and updating the `.csv` files (see [language localization](#LANGUAGE-LOCALIZATION)). 
@@ -141,7 +141,7 @@ The experiment file allows you to customize various settings. In the **Overview*
 | `n_angles` | • **6** (0°, 45°, 135°, 180°, 225°, 315°) (Default)<br>• 4 (increments of 90°)<br>• 6 (increments of 60°)<br>• 8 (increments of 45°)<br>• 12 (increments of 30°) | Sets the number and type of rotation angles presented. |
 | `body_views` | • **front and back** (Default)<br>• front<br>• back | Determines which body orientations are shown. |
 | `limbs` | • **arms and legs** (Default)<br>• arms<br>• legs | Determines which limbs are rotated. |
-| `n_reps` | • **1** (Default)<br>• 4<br>• 8<br>• 12 | The number of times each unique stimulus is repeated. |
+| `n_reps` | •1<br>• **4** (Default)<br>• 8<br>• 12 | The number of times each unique stimulus is repeated. |
 | `feedback` | • **0.3** (Default)<br>• 0.5<br>• 0.8<br>• 1<br>• No feedback | Duration of feedback (in seconds) per trial in the test blocks. |
 | `language_localiser`| • **English** (Default)<br>• German | Sets the default language for the experiment. |
 
