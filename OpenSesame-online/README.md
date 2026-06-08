@@ -142,7 +142,7 @@ The experiment file allows you to customize various settings. In the **Overview*
 | `body_views` | • **front and back** (Default)<br>• front<br>• back | Determines which body orientations are shown. |
 | `limbs` | • **arms and legs** (Default)<br>• arms<br>• legs | Determines which limbs are rotated. |
 | `n_reps` | •1<br>• **4** (Default)<br>• 8<br>• 12 | The number of times each unique stimulus is repeated. |
-| `feedback` | • **0.3** (Default)<br>• 0.5<br>• 0.8<br>• 1<br>• No feedback | Duration of feedback (in seconds) per trial in the test blocks. |
+| `feedback` | • 0.3<br>• 0.5<br>• 0.8<br>• 1<br>• **No feedback in testblock(s)** (Default) | Duration of feedback (in seconds) per trial in the test blocks. |
 | `language_localiser`| • **English** (Default)<br>• German | Sets the default language for the experiment. |
 
 > **Important:** If you import the provided `.jzip` file directly to the JATOS server without edits, the **Default** settings (bolded above) will be used.
