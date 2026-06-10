@@ -1,0 +1,13 @@
+﻿mbrt_images,mbrt_side,mbrt_view,mbrt_angle,mbrt_limb,mbrt_correct_both,mbrt_correct_one
+mbrt_images/right_leg_front.png,right,front,0,leg,l,h
+mbrt_images/right_leg_front.png,right,front,45,leg,l,h
+mbrt_images/right_leg_front.png,right,front,135,leg,l,h
+mbrt_images/right_leg_front.png,right,front,180,leg,l,h
+mbrt_images/right_leg_front.png,right,front,225,leg,l,h
+mbrt_images/right_leg_front.png,right,front,315,leg,l,h
+mbrt_images/left_leg_front.png,left,front,0,leg,s,g
+mbrt_images/left_leg_front.png,left,front,45,leg,s,g
+mbrt_images/left_leg_front.png,left,front,135,leg,s,g
+mbrt_images/left_leg_front.png,left,front,180,leg,s,g
+mbrt_images/left_leg_front.png,left,front,225,leg,s,g
+mbrt_images/left_leg_front.png,left,front,315,leg,s,g

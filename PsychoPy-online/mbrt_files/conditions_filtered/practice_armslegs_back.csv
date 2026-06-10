@@ -1,0 +1,5 @@
+﻿mbrt_images,mbrt_side,mbrt_view,mbrt_angle,mbrt_limb,mbrt_correct_both,mbrt_correct_one
+mbrt_images/right_leg_back.png,right,back,0,leg,l,h
+mbrt_images/left_leg_back.png,left,back,0,leg,s,g
+mbrt_images/right_arm_back.png,right,back,0,arm,l,h
+mbrt_images/left_arm_back.png,left,back,0,arm,s,g

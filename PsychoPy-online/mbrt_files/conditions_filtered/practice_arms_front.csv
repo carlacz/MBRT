@@ -1,0 +1,3 @@
+﻿mbrt_images,mbrt_side,mbrt_view,mbrt_angle,mbrt_limb,mbrt_correct_both,mbrt_correct_one
+mbrt_images/right_arm_front.png,right,front,0,arm,l,h
+mbrt_images/left_arm_front.png,left,front,0,arm,s,g
