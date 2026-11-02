@@ -143,7 +143,7 @@ In the default configuration, participants can select their `language` upon star
 | `feedback` | • 0.3<br>• 0.5<br>• 0.8<br>• 1<br>• **No feedback in testblock(s)** (Default) | Duration of feedback (in seconds) per trial in the test blocks. |
 | `language_localiser`| • **English** (Default)<br>• German | Sets the default language for the experiment. |
 
-### Setting default values (code-based)
+### Setting default values
 
 Defaults are controlled in the experiment code.
 
@@ -156,6 +156,9 @@ Defaults are controlled in the experiment code.
 3. Comment out the lines that overwrite the default with dialog input
 
 This forces the experiment to use your hard-coded defaults.
+
+To use different visual stimuli (e.g., images depicting specific demographic characteristics), replace the image files in the relevant folder with your own, retaining the original filenames.
+If you have used alternative stimuli in a published study, you are welcome to send them (together with the DOI of the manuscript) to the corresponding author for possible inclusion in the task repositories.
 
 #### Disable language selection
 
