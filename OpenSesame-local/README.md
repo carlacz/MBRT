@@ -169,6 +169,9 @@ selected_n_reps = 1;
 Instead of disabling the whole `experiment_settings` sequence, you can also set defaults for specific settings only. For instance, if your whole sample is German-speaking, you can hard-code the language default in the `preparations` inline script (see above) and disable only the `language_localiser` item (see below).  
 ![experiment settings sequence](../pngs-READMEs/experiment-settings_sequence_local-v2.png)
 
+To use different visual stimuli (e.g., images depicting specific demographic characteristics), replace the image files in the relevant folder with your own, retaining the original filenames.
+If you have used alternative stimuli in a published study, you are welcome to send them (together with the DOI of the manuscript) to the corresponding author for possible inclusion in the task repositories.
+
 ### Disable Demographic Questions
 The experiment includes three demographic questions (Age, Sex, Handedness) by default. We incorporate these questions to facilitate the **creation of norms** that will facilitate the interpretation of individual scores.  
 
