@@ -249,6 +249,7 @@ OpenSesame version updates may require adjustments in the experiment file.
 As developers, we are not responsible to implementing the task in every use case.  
 Before collecting data, always test the display geometry, stylus responses, timing, localized instructions, and data output.  
 Feel free to contribute!
+
 -------
 ## REFERENCE
 Please cite [Czilczer et al. (2026)](https://doi.org/10.31234/osf.io/9xjfb_v1) when using this resource.
